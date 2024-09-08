@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { BASE_URL } from '../config';
 import Home from '../views/Home.vue';
 
 const routes = [
@@ -50,7 +51,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(BASE_URL),
   routes,
 });
 

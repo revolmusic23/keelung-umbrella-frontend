@@ -1,10 +1,12 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-
 import path from 'path';
 
+const isDevelopment = process.env.NODE_ENV === 'development';
+const BASE_URL = isDevelopment ? '/' : '/keelung-umbrella-frontend/';
+
 export default defineConfig({
-  base: '/keelung-umbrella-frontend/',
+  base: BASE_URL,
   plugins: [vue()],
   css: {
     preprocessorOptions: {
