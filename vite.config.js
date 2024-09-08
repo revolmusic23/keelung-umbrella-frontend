@@ -7,7 +7,7 @@ const BASE_URL = isDevelopment ? '/' : '/keelung-umbrella-frontend/';
 console.log('Current BASE_URL:', BASE_URL);
 
 export default defineConfig({
-  base: BASE_URL,
+  base: '/keelung-umbrella-frontend/',
   plugins: [vue()],
   css: {
     preprocessorOptions: {
