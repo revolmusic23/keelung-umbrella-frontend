@@ -4,6 +4,7 @@ import path from 'path';
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 const BASE_URL = isDevelopment ? '/' : '/keelung-umbrella-frontend/';
+console.log('Current BASE_URL:', BASE_URL);
 
 export default defineConfig({
   base: BASE_URL,

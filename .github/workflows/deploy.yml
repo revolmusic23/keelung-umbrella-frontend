@@ -1,5 +1,6 @@
 name: Deploy to GitHub Pages
 
+# 觸發條件
 on:
   push:
     branches:
@@ -17,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' # 或者您項目使用的 Node.js 版本
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci
