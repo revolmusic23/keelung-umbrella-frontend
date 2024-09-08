@@ -1,0 +1,10 @@
+.btn {
+  &-orange {
+    background-color: $primary-orange;
+    color: white;
+  }
+  &-blue {
+    background-color: $primary-blue;
+    color: white;
+  }
+}

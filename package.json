@@ -1,0 +1,25 @@
+{
+  "name": "umbrella-people-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "validate.js": "^0.13.1",
+    "vue": "^3.4.37",
+    "vue-router": "^4.4.3",
+    "vuetify": "^3.7.0-beta.1",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.1.2",
+    "prettier": "^3.3.3",
+    "sass": "^1.77.8",
+    "vite": "^5.4.1"
+  }
+}
