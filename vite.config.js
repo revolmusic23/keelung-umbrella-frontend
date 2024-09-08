@@ -4,6 +4,7 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
 export default defineConfig({
+  base: '/keelung-umbrella-frontend/',
   plugins: [vue()],
   css: {
     preprocessorOptions: {
