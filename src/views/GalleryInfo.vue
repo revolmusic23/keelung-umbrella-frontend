@@ -6,7 +6,7 @@
     rounded="lg"
     width="100%"
   >
-    <v-img class="mb-4" src="/images/image-test.jpg"></v-img>
+    <v-img class="mb-4" src="images/image-test.jpg"></v-img>
 
     <div class="text-start">
       <h2 class="mb-2">{{ galleryInfo.title }}</h2>

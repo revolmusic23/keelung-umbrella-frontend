@@ -5,7 +5,7 @@
     rounded="lg"
     width="100%"
   >
-    <v-img src="/images/wandering-in-keelung.png" class="mb-4"></v-img>
+    <v-img src="images/wandering-in-keelung.png" class="mb-4"></v-img>
     <div class="home-content px-md-8">
       <h1 class="home-title text-center">{{ HOME_TITLE }}</h1>
       <h4 class="subtitle mb-4 text-center">{{ SUBTITLE }}</h4>
