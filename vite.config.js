@@ -3,12 +3,26 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 
 export default defineConfig(({ mode }) => {
-  const BASE_URL = mode === 'production' ? '/keelung-umbrella-frontend/' : '/';
+  // const BASE_URL = mode === 'production' ? '/keelung-umbrella-frontend/' : '/';
   const env = loadEnv(mode, process.cwd(), '');
+  const base = env.VITE_BASE_URL || '/keelung-umbrella-frontend/';
 
   return {
     base: env.VITE_BASE_URL || '/keelung-umbrella-frontend/',
-    plugins: [vue()],
+    plugins: [
+      vue(),
+      {
+        name: 'html-transform',
+        transformIndexHtml(html) {
+          return html
+            .replace(/src="\/src\/main.js"/, `src="${base}src/main.js"`)
+            .replace(
+              /href="\/images\/sm-umbrella.png"/,
+              `href="${base}images/sm-umbrella.png"`
+            );
+        },
+      },
+    ],
     css: {
       preprocessorOptions: {
         scss: {
