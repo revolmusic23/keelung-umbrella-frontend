@@ -1,0 +1,1 @@
+import{g as r,a as t}from"./mockData-Cwu-vO8p.js";const s={async getGalleryInfoApi(e){return r.data},async getGalleryListApi(e){return t.data}},o={async getGalleryInfo(){return await s.getGalleryInfoApi()},async getGalleryList(){return(await s.getGalleryListApi()).data}};export{o as g};

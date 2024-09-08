@@ -1,0 +1,1 @@
+const l={status:200,data:{message:"Success posting image."}},r={status:200,data:{title:"傘人家族示意圖",description:"一些關於圖片的敘述。",author:"葉大雄"}},c=(s,a)=>{const e=[],o=(s-1)*a,n=s*a;for(let t=o;t<n;t++)e.push({gallery_id:t,title:`傘人家族示意圖 ${t+1}`,content:"一些關於圖片的敘述。"});return e},d={status:200,data:{total:30,data:c(1,12)}};export{d as a,r as g,l as p};
