@@ -32,17 +32,23 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+
       - name: Install dependencies
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          VITE_BASE_URL: /keelung-umbrella-frontend/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist folder
           path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
