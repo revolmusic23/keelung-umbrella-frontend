@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const BASE_URL = mode === 'production' ? '/keelung-umbrella-frontend/' : '/';
 
   return {
-    base: BASE_URL,
+    base: '/keelung-umbrella-frontend/',
     plugins: [vue()],
     css: {
       preprocessorOptions: {
