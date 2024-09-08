@@ -53,8 +53,6 @@ const SUBTITLE = '〈傘人家族〉創意合照競賽';
 @import '@/assets/styles/buttons.scss';
 .home-page {
   background: white;
-  // margin-left: -16px;
-  // margin-right: -16px;
   margin: -16px;
   padding-top: 16px;
   padding-bottom: 16px;
@@ -64,7 +62,6 @@ const SUBTITLE = '〈傘人家族〉創意合照競賽';
   padding-right: 16px;
 }
 .home-title {
-  // letter-spacing: 2px;
   font-size: 1.2rem;
 }
 .subtitle {

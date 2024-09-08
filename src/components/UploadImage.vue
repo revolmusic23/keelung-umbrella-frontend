@@ -1,5 +1,4 @@
 <template>
-  <!-- <v-form ref="imgFormRef" @submit.prevent="submitForm"> -->
   <v-form ref="imgFormRef">
     <v-card class="border mb-4" min-height="200">
       <v-img v-if="imgFormData.img" :src="imgUrl"></v-img>
@@ -40,13 +39,6 @@
         density="compact"
       ></component>
     </div>
-
-    <!-- <div class="button-container">
-      <v-btn @click="emit('prev-step')" variant="tonal">上一步</v-btn>
-      <v-btn type="submit" class="btn-orange" :loading="loadingSubmit"
-        >送出</v-btn
-      >
-    </div> -->
   </v-form>
 </template>
 
@@ -106,20 +98,6 @@ const validate = async () => {
   const { valid } = await imgFormRef.value.validate();
   return valid;
 };
-
-// const submitForm = async () => {
-//   try {
-//     loadingSubmit.value = true;
-//     const { valid } = await imgFormRef.value.validate();
-//     if (valid) {
-//       emit('submit');
-//     }
-//     emit('submit');
-//   } catch (error) {
-//   } finally {
-//     loadingSubmit.value = false;
-//   }
-// };
 
 onUnmounted(() => {
   URL.revokeObjectURL(imgUrl.value);

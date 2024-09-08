@@ -62,13 +62,6 @@ const validate = async () => {
   return valid;
 };
 
-// const submitForm = async () => {
-//   const { valid } = await userFormRef.value.validate();
-//   if (valid) {
-//     emit('submit');
-//   }
-//   emit('submit');
-// };
 defineExpose({ validate });
 </script>
 

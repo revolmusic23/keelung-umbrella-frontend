@@ -23,9 +23,7 @@ const showToolbar = computed(() => !route.meta.hideToolbar);
 
 <style scoped lang="scss">
 * {
-  // --primary-orange: #ef8202;
   --primary-orange: rgb(237, 93, 21);
-  // --primary-orange-hover: #ed5d1466;
   --primary-orange-hover: rgba(237, 93, 21, 0.3);
   --primary-blue: rgba(22, 73, 147);
 

@@ -124,6 +124,5 @@ input {
 .button-container {
   display: flex;
   justify-content: space-between;
-  /* padding: 0 1em 1em 1em; */
 }
 </style>

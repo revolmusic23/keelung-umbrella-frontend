@@ -7,9 +7,6 @@
       class="ml-2 cursor-pointer"
       @click="router.push({ name: 'Home' })"
     ></v-img>
-    <!-- <v-btn icon variant="text" @click="router.push({ name: 'Home' })">
-      <v-icon icon>mdi-home</v-icon>
-    </v-btn> -->
     <v-spacer></v-spacer>
     <v-btn
       v-for="item in menuItems"
@@ -76,6 +73,5 @@ const menuItems = computed(() => {
 }
 .toolbar-btn:not(.active-btn):hover {
   background-color: var(--primary-orange-hover);
-  // background-color: rgba(var(--primary-orange), 0.5);
 }
 </style>

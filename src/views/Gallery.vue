@@ -1,7 +1,6 @@
 <template>
   <!-- <v-container> -->
   <v-infinite-scroll :onLoad="getGalleryList" color="orange">
-    <!-- <h1>{{ $route.meta.title }}</h1> -->
     <GalleryGrid
       :cards="galleryList"
       @navigate-to-gallery-info="navigateToGalleryInfo"
