@@ -15,7 +15,10 @@ export default defineConfig(({ mode }) => {
         name: 'html-transform',
         transformIndexHtml(html) {
           return html
-            .replace(/src="\/src\/main.js"/, `src="${base}src/main.js"`)
+            .replace(
+              /<script type="module" src="\/src\/main.js"><\/script>/,
+              `<script type="module" src="${base}src/main.js"></script>`
+            )
             .replace(
               /href="\/images\/sm-umbrella.png"/,
               `href="${base}images/sm-umbrella.png"`
