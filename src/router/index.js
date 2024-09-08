@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { BASE_URL } from '../config';
 import Home from '../views/Home.vue';
+
+const isDevelopment = process.env.NODE_ENV === 'development';
+const BASE_URL = isDevelopment ? '/' : '/keelung-umbrella-frontend/';
 
 const routes = [
   {
