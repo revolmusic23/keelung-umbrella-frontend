@@ -1,4 +1,4 @@
-import{_ as I,r as F,a as p,o as x,c as R,w as _,b as V,F as z,d as q,e as N,f as D,t as j,g as L,h,u as w,i as J,j as W,k as Y,l as Q,m as ee,n as M}from"./index-Bw1sujF5.js";import{p as te}from"./mockData-Cwu-vO8p.js";const re={async postImgApi(f){return te.data}},ne={async postImg(f,m){const E={...f,...m};return await re.postImgApi(E)}};var ie=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{},P={exports:{}};/*!
+import{_ as I,r as F,a as p,o as x,c as R,w as _,b as V,F as z,d as q,e as N,f as D,t as j,g as L,h,u as w,i as J,j as W,k as Y,l as Q,m as ee,n as M}from"./index-CL9xL__w.js";import{p as te}from"./mockData-Cwu-vO8p.js";const re={async postImgApi(f){return te.data}},ne={async postImg(f,m){const E={...f,...m};return await re.postImgApi(E)}};var ie=typeof globalThis<"u"?globalThis:typeof window<"u"?window:typeof global<"u"?global:typeof self<"u"?self:{},P={exports:{}};/*!
  * validate.js 0.13.1
  *
  * (c) 2013-2019 Nicklas Ansman, 2013 Wrapp
