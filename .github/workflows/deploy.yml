@@ -28,6 +28,13 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Debug Build Output
+        run: |
+          echo "Listing dist directory:"
+          ls -R dist
+          echo "Content of dist/index.html:"
+          cat dist/index.html
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
