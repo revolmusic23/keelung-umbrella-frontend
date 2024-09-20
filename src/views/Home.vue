@@ -10,11 +10,8 @@
       <h1 class="home-title text-center">{{ HOME_TITLE }}</h1>
       <h4 class="subtitle mb-4 text-center">{{ SUBTITLE }}</h4>
       <div class="mb-4 d-flex justify-center ga-2">
-        <v-icon size="36">mdi-vote</v-icon>
-        <div style="font-size: 0.8rem">
-          <div>活動時間：10/10 - 10/30</div>
-          <div>目前參與人數：500 人</div>
-        </div>
+        <v-icon size="24">mdi-vote</v-icon>
+        <div>活動時間：10/10 - 10/30</div>
       </div>
       <p class="mx-auto mb-4 details w-sm-75">
         鑒於三隻公仔在廣場上的吸睛效果和拍照熱點的設定，
