@@ -13,7 +13,7 @@ export const getGalleryInfoResponse = {
     title: '傘人家族示意圖',
     description: '一些關於圖片的敘述。',
     author: '葉大雄',
-    src: '/images/three-umbrella.jpg',
+    src: '../images/three-umbrella.jpg',
   },
 };
 
