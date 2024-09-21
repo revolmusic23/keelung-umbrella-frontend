@@ -6,20 +6,19 @@
     rounded="lg"
     width="100%"
   >
-    <v-img class="mb-4" src="/images/image-test.jpg"></v-img>
-
-    <div class="text-start">
-      <h2 class="mb-2">{{ galleryInfo.title }}</h2>
-      <h4 class="mb-2">作者：{{ galleryInfo.author }}</h4>
-      <p class="">{{ galleryInfo.description }}</p>
-    </div>
+    <PolaroidImage
+      :imgSrc="galleryInfo.src"
+      :title="galleryInfo.title"
+      :description="galleryInfo.description"
+    />
   </v-sheet>
 </template>
 
 <script setup>
-import { reactive, onMounted } from 'vue';
+import { ref, reactive, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import galleryService from '@/services/galleryService';
+import PolaroidImage from '@/components/PolaroidImage.vue';
 
 const route = useRoute();
 
