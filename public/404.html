@@ -2,13 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>重定向中...</title>
-    <script>
-      sessionStorage.redirect = location.href;
-      location.href = '/keelung-umbrella-frontend/';
+    <title>Single Page Apps for GitHub Pages</title>
+    <script type="text/javascript">
+      var segmentCount = 1;
+      var l = window.location;
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          l.pathname
+            .split('/')
+            .slice(0, 1 + segmentCount)
+            .join('/') +
+          '/?p=/' +
+          l.pathname
+            .slice(1)
+            .split('/')
+            .slice(segmentCount)
+            .join('/')
+            .replace(/&/g, '~and~') +
+          (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+      );
     </script>
   </head>
-  <body>
-    如果沒有自動重定向，請<a href="/keelung-umbrella-frontend/">點擊這裡</a>。
-  </body>
+  <body></body>
 </html>
