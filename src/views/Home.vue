@@ -1,44 +1,24 @@
 <template>
-  <v-sheet
-    class="py-4 py-md-8 px-0 mx-auto"
-    elevation="4"
-    rounded="lg"
-    width="100%"
-  >
-    <v-img src="images/wandering-in-keelung.png" class="mb-4"></v-img>
-    <div class="home-content px-md-8">
-      <h1 class="home-title text-center">{{ HOME_TITLE }}</h1>
-      <h4 class="subtitle mb-4 text-center">{{ SUBTITLE }}</h4>
-      <div class="mb-4 d-flex justify-center ga-2">
-        <v-icon size="24">mdi-vote</v-icon>
-        <div>活動時間：10/10 - 10/30</div>
-      </div>
-      <p class="mx-auto mb-4 details w-sm-75">
-        鑒於三隻公仔在廣場上的吸睛效果和拍照熱點的設定，
-        期待民眾能夠透過與公仔進行創意合照互動。<br />
-        進入本活動架設之網站，可以進一步認識到「傘人家族」的故事，
-        並發現其他家族成員分布在基隆的哪些角落等待民眾去探索，
-        完成操作後可兌換文宣小物一份。
-      </p>
-
-      <div class="button-container">
-        <v-btn
-          class="btn-orange"
-          @click="router.push({ name: 'UploadStepper' })"
-        >
-          上傳圖片
-        </v-btn>
-        <v-btn class="btn-blue" @click="router.push({ name: 'Gallery' })">
-          作品頁面
-        </v-btn>
-      </div>
-    </div>
+  <v-sheet class="mx-auto pa-4 rounded-lg border" elevation="4" max-width="500">
+    <PageTitle title="關於傘人家族" class="mb-2" />
+    <p>
+      「傘人家族」是基隆城市指標系統中擔任城市的小小導覽員，將城市色彩和資訊相結合，串聯城市、生活和交通資源，你可以在孝三路商圈、城隍廟、崁仔頂、委託行商圈和許梓桑古厝等地找到他們喔。<br />
+      目前他們已分佈在 18
+      處，不管你看到的是優雅的「大傘」，俏皮的「小傘」，還是可愛的「小雲」，只要看到傘橘色的傘人家族，就趕緊拿起手機掃一掃
+      QR Code 吧！<br />
+      小傘人們會帶你連接到基隆旅遊網，獲得景點的相關資訊。讓你的基隆旅程更加豐富趣味！
+    </p>
   </v-sheet>
+
+  <HomeModal />
 </template>
 
 <script setup>
 import { ref, watch, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
+
+import PageTitle from '@/components/PageTitle.vue';
+import HomeModal from '@/components/HomeModal.vue';
 
 const router = useRouter();
 
@@ -48,28 +28,9 @@ const SUBTITLE = '〈傘人家族〉創意合照競賽';
 
 <style scoped lang="scss">
 @import '@/assets/styles/buttons.scss';
-.home-page {
-  background: white;
-  margin: -16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-}
-.home-content {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-.home-title {
-  font-size: 1.2rem;
-}
-.subtitle {
-  font-size: 1rem;
-  font-weight: 400;
-}
-.details {
-  font-size: 0.9rem;
-}
-.button-container {
-  @include flex-center();
-  gap: 1em;
+.page-title {
+  display: flex;
+  align-items: center;
+  letter-spacing: 1.4px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-app-bar fixed class="px-md-12" :elevation="2" color="white">
     <v-img
-      src="images/keelong-city-logo.png"
+      src="images/logo.svg"
       height="70%"
       max-width="240"
       class="ml-2 cursor-pointer"
@@ -48,7 +48,7 @@ const router = useRouter();
 
 const showDrawer = ref(false);
 
-const menu = ['UploadStepper', 'Gallery', 'Links'];
+const menu = ['Activity', 'UploadStepper', 'Gallery', 'Links'];
 /**
  * 將主選單轉為 vuetify 要求格式
  * @param {string} item

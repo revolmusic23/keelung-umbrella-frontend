@@ -1,9 +1,6 @@
 <template>
   <v-sheet class="mx-auto pa-4 rounded-lg border" elevation="4" max-width="500">
-    <h4 class="page-title mb-4">
-      <v-icon class="" color="var(--primary-orange)">mdi-square-medium</v-icon>
-      {{ $route.meta.title }}
-    </h4>
+    <PageTitle :title="$route.meta.title" class="mb-4" />
     <div v-for="(link, idx) in links" :key="idx">
       <div class="links-container mb-2">
         <v-icon color="#666" size="18">mdi-link-variant</v-icon>
@@ -16,6 +13,8 @@
 </template>
 
 <script setup>
+import PageTitle from '@/components/PageTitle.vue';
+
 const links = [
   {
     title: '111年海洋保育創意攝影競賽【人氣票選】－海洋生物組',

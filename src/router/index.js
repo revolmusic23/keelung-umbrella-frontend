@@ -13,6 +13,14 @@ const routes = [
     },
   },
   {
+    path: '/activity',
+    name: 'Activity',
+    component: () => import('@/views/Activity.vue'),
+    meta: {
+      title: '活動內容',
+    },
+  },
+  {
     path: '/upload',
     name: 'UploadStepper',
     component: () => import('@/views/UploadStepper.vue'),

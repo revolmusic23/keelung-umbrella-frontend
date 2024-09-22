@@ -21,12 +21,14 @@ const route = useRoute();
 const showToolbar = computed(() => !route.meta.hideToolbar);
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 * {
   --primary-orange: rgb(237, 93, 21);
   --primary-orange-hover: rgba(237, 93, 21, 0.3);
   --primary-blue: rgba(22, 73, 147);
+}
 
+.v-main {
   background-color: #eee;
 }
 </style>
