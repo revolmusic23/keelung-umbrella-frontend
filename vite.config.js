@@ -6,8 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    base:
-      process.env.NODE_ENV === 'production' ? process.env.VITE_BASE_URL : '/',
+    base: mode === 'production' ? '/keelung-umbrella-frontend/' : '/',
     plugins: [vue()],
     css: {
       preprocessorOptions: {
