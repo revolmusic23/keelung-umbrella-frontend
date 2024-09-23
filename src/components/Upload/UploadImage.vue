@@ -43,7 +43,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, watch, onUnmounted } from 'vue';
+import { ref, reactive, computed, watch, onUnmounted } from 'vue';
 import {
   requiredRules,
   imgDescriptionRules,
@@ -58,12 +58,19 @@ const props = defineProps({
   imgFormData: {
     type: Object,
   },
+  imgUrl: {
+    type: String,
+  },
 });
 
-const emit = defineEmits(['prev-step', 'submit']);
+const emit = defineEmits(['update:imgUrl']);
 
 const imgFormData = props.imgFormData;
 const imgUrl = ref(null);
+
+watch(imgUrl, (newVal) => {
+  emit('update:imgUrl', newVal);
+});
 
 watch(
   () => imgFormData.img,

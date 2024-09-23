@@ -53,7 +53,7 @@ const userFormItem = [
     counter: 10,
     rules: phoneRules(),
   },
-  { id: 'email', label: 'E-mail', rules: emailRules() },
+  { id: 'email', label: 'E-mail', required: true, rules: emailRules() },
 ];
 
 const validate = async () => {

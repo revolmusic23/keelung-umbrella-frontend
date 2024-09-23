@@ -26,6 +26,7 @@ export const phoneRules = () => [
 ];
 
 export const emailRules = () => [
+  (v) => !!v || REQUIRED_FIELD_MESSAGE,
   (v) => !v || v.length <= 255 || `${EMAIL}不能超過 255 個字元`,
   (v) => !v || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) || `請輸入有效的${EMAIL}`,
   (v) =>

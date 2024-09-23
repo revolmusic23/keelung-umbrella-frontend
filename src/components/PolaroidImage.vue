@@ -43,6 +43,11 @@ const canvasSize = reactive({
   height: 0,
 });
 
+onMounted(async () => {
+  if (props.imgSrc) {
+    await generateImage(props.imgSrc);
+  }
+});
 watch(
   () => props.imgSrc,
   async (newVal) => {
@@ -64,6 +69,8 @@ const loadImage = (src) => {
 
 const generateImage = async (src) => {
   try {
+    if (!src) return;
+
     originalImg.value = await loadImage(props.imgSrc || src);
     // console.log(originalImg.value);
     console.log(originalImg.value.width, originalImg.value.height);
