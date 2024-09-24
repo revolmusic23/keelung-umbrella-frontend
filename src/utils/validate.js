@@ -40,7 +40,7 @@ export const imgDescriptionRules = (maxLength) => [
   (v) => v.length < maxLength || overMaxLength(maxLength),
 ];
 
-export const imgUploadRules = (MAX_IMG_SIZE = 2) => [
+export const imgUploadRules = (MAX_IMG_SIZE) => [
   (value) => {
     return value.length > 0 || '請選擇圖片';
   },

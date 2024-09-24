@@ -50,7 +50,7 @@ import {
   imgUploadRules,
 } from '@/utils/validate';
 
-const MAX_IMG_SIZE = 2;
+const MAX_IMG_SIZE = 50;
 const MAX_DESCRIPTION = 100;
 const imgFormRef = ref(null);
 
