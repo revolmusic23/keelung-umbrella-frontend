@@ -3,21 +3,25 @@ $primary-blue: var(--primary-blue);
 
 .btn {
   &-orange {
-    background-color: var(--primary-orange);
-    color: white;
+    background-color: var(--primary-orange) !important;
+    color: white !important;
   }
   &-blue {
-    background-color: $primary-blue;
-    color: white;
+    background-color: $primary-blue !important;
+    color: white !important;
   }
 }
 
 .page-title {
   text-align: center;
+  margin-top: 1.6rem;
+  letter-spacing: 1px;
 }
 .page-subtitle {
   color: var(--primary-orange);
   text-align: center;
+  margin-top: 0.4rem;
+  letter-spacing: 0.6px;
 }
 .paragraph-title {
   font-size: 1.6rem;

@@ -1,9 +1,15 @@
 <template>
   <v-sheet
-    class="mx-auto pa-md-8 pa-4 rounded-lg border"
+    class="mx-auto pa-md-8 pa-4 rounded-lg border position-relative"
     elevation="4"
     max-width="1200"
   >
+    <v-img
+      src="images/cloud-opacity.svg"
+      width="200"
+      class="position-absolute top-0 right-0 ma-4 d-none d-md-flex"
+    ></v-img>
+
     <h1 class="page-title">關於傘人家族</h1>
     <h3 class="page-subtitle">城市指標更驚艷</h3>
 

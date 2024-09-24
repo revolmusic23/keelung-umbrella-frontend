@@ -1,12 +1,26 @@
 <template>
   <v-sheet
-    class="mx-auto pa-md-8 pa-4 rounded-lg border"
+    class="mx-auto pa-md-8 pa-4 rounded-lg border position-relative"
     elevation="4"
     max-width="1200"
   >
+    <v-img
+      src="images/cloud-opacity.svg"
+      width="200"
+      class="position-absolute top-0 right-0 ma-4 d-none d-md-flex"
+    ></v-img>
+
     <h1 class="page-title">一起「傘人」1~2~3！</h1>
     <h3 class="page-subtitle">傘人家族創意合照 - 手機攝影比賽</h3>
-    <div class="paragraph">
+
+    <div class="paragraph mt-md-12 position-relative">
+      <v-img
+        src="images/cloud-opacity.svg"
+        width="160"
+        class="position-absolute left-0 ma-4 d-none d-md-flex"
+        style="top: -7rem"
+      ></v-img>
+
       <h4 class="paragraph-title">活動內容</h4>
       <p>
         10/10～10/31
