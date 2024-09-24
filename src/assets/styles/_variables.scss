@@ -1,2 +1,70 @@
 $primary-orange: var(--primary-orange);
 $primary-blue: var(--primary-blue);
+
+.btn {
+  &-orange {
+    background-color: var(--primary-orange);
+    color: white;
+  }
+  &-blue {
+    background-color: $primary-blue;
+    color: white;
+  }
+}
+
+.page-title {
+  text-align: center;
+}
+.page-subtitle {
+  color: var(--primary-orange);
+  text-align: center;
+}
+.paragraph-title {
+  font-size: 1.6rem;
+  border: 1px solid var(--primary-orange);
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  display: inline-block;
+  margin: 1rem 0;
+}
+.paragraph .v-table {
+  th,
+  td {
+    text-align: center;
+  }
+  th {
+    background: var(--primary-orange);
+    color: #fff;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  td {
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+}
+.paragraph {
+  .date-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+  }
+  .link {
+    color: var(--primary-orange);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.orange-text {
+  color: var(--primary-orange);
+}
+.orange-bold-text {
+  color: var(--primary-orange);
+  font-weight: 600;
+}
+.text-bold {
+  font-weight: 600;
+}

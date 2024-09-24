@@ -114,8 +114,6 @@ defineExpose({ validate });
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/buttons.scss';
-
 .v-card {
   @include flex-center;
 }

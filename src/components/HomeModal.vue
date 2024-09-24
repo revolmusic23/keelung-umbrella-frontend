@@ -36,7 +36,6 @@ const dialog = ref(true);
 </script>
 
 <style scoped lang="scss">
-@import '@/assets/styles/buttons.scss';
 .v-card * {
   display: flex;
   justify-content: center;

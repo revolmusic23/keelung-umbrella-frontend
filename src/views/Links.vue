@@ -33,11 +33,6 @@ const links = [
 </script>
 
 <style lang="scss" scoped>
-.page-title {
-  display: flex;
-  align-items: center;
-  letter-spacing: 1.4px;
-}
 .links-container {
   display: flex;
   align-items: center;

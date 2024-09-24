@@ -31,7 +31,6 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-@import '@/assets/styles/buttons.scss';
 .scroll-to-top-btn {
   position: fixed;
   bottom: 20px;

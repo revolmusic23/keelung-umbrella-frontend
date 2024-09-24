@@ -128,8 +128,6 @@ const submitAll = async () => {
 </script>
 
 <style scoped>
-@import '@/assets/styles/buttons.scss';
-
 label,
 input {
   display: block;

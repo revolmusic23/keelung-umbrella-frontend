@@ -66,8 +66,6 @@ defineExpose({ validate });
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/styles/buttons.scss';
-
 :deep(.v-input__details) {
   padding: 0 !important;
 }
