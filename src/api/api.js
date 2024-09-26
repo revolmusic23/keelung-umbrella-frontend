@@ -21,6 +21,7 @@ let accessToken = null;
 
 const api = axios.create({
   baseURL: API_URL,
+  withCredentials: true,
 });
 
 const getNewToken = async () => {

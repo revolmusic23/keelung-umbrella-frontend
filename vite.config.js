@@ -21,8 +21,15 @@ export default defineConfig(({ mode }) => {
       },
     },
     build: {
-      outDir: 'dist',
+      outDir: 'UmbrellaMan123',
       assetsDir: 'assets',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'cors-anywhere': ['cors-anywhere'],
+          },
+        },
+      },
     },
     server: {
       host: '0.0.0.0',

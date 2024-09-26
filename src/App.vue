@@ -8,6 +8,8 @@
         <ScrollToTopButton />
       </v-container>
     </v-main>
+
+    <Footer />
   </v-app>
 </template>
 
@@ -15,6 +17,7 @@
 import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 import Toolbar from './components/Toolbar.vue';
+import Footer from './components/Footer.vue';
 import ScrollToTopButton from './components/ScrollToTopButton.vue';
 
 const route = useRoute();
