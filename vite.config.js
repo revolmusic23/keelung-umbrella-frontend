@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    base: mode === 'production' ? '/keelung-umbrella-frontend/' : '/',
+    base: mode === 'production' ? env.VITE_BASE_URL : '/',
     plugins: [vue()],
     css: {
       preprocessorOptions: {
@@ -27,6 +27,23 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0',
       port: 3000,
+      proxy: {
+        '/api': {
+          target: 'https://event-site.org',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api/, '/keelung/api'),
+        },
+        '/oauth': {
+          target: 'https://event-site.org',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/oauth/, '/keelung/oauth'),
+        },
+        '/storage': {
+          target: 'https://event-site.org',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/storage/, '/keelung/storage'),
+        },
+      },
     },
   };
 });

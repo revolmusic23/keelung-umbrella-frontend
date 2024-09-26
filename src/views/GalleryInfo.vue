@@ -20,13 +20,29 @@ import { useRoute } from 'vue-router';
 import services from '@/services/services';
 import PolaroidImage from '@/components/PolaroidImage.vue';
 
+const props = defineProps({
+  uuid: String,
+});
+
 const route = useRoute();
 
-const galleryInfo = reactive({});
+const galleryInfo = ref({
+  src: '',
+  title: '',
+  description: '',
+});
 
 onMounted(async () => {
-  const response = await services.getGalleryInfo(route.query.gallery_id);
-  Object.assign(galleryInfo, response);
+  const data = await services.getGalleryInfo(props.uuid);
+  // console.log(response);
+  console.log(data);
+  galleryInfo.value = data;
+  // galleryInfo.value = {
+  //   src: data.images[0].image_path,
+  //   title: data.title,
+  //   description: data.description,
+  // };
+  // Object.assign(galleryInfo, response);
 });
 </script>
 

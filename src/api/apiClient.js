@@ -9,21 +9,27 @@ import {
 export default {
   async postImgApi(formData) {
     try {
-      const response = await api.post('/submit', formData);
-      console.log(response);
+      const response = await api.post('/submissions', formData);
       return response.data;
     } catch (error) {
       console.log(error);
     }
   },
 
-  async getGalleryInfoApi(params) {
+  async getGalleryInfoApi(uuid) {
     const response = getGalleryInfoResponse;
-    return response.data;
+    // const response = await api.get(`/submissions/${uuid}`);
+    console.log(response);
+    return response;
   },
 
   async getGalleryListApi(params) {
-    const response = getGalleryListResponse;
-    return response.data;
+    try {
+      const response = await api.get('/submissions');
+      return response;
+    } catch (error) {
+      console.error('Error fetching submissions:', error);
+      throw error;
+    }
   },
 };

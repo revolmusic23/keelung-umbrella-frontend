@@ -1,18 +1,53 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://event-site.org/keelung/api';
+const API_URL = '/api';
+const TOKEN_URL = '/oauth/token';
+
+const CLIENT_ID = '1';
+const CLIENT_SECRET = 'Zt6JQhpav1KBvSC3JN3PatmoQgrsmf73PgG7qxvu';
+
+let accessToken = null;
 
 const api = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
+  baseURL: API_URL,
 });
 
-// 請求攔截器
+const getNewToken = async () => {
+  const response = await axios.post(
+    TOKEN_URL,
+    {
+      client_id: CLIENT_ID,
+      client_secret: CLIENT_SECRET,
+      grant_type: 'client_credentials',
+    },
+    {
+      headers: { 'Content-Type': 'application/json' },
+    }
+  );
+  accessToken = response.data.access_token;
+  return accessToken;
+};
+
+const getValidToken = async () => {
+  if (!accessToken) {
+    return getNewToken();
+  }
+  return accessToken;
+};
+
+const setContentType = (config) => {
+  if (config.data instanceof FormData) {
+    config.headers['Content-Type'] = 'multipart/form-data';
+  } else if (typeof config.data === 'object') {
+    config.headers['Content-Type'] = 'application/json';
+  }
+  return config;
+};
+
 api.interceptors.request.use(
-  (config) => {
-    console.log('Request sent:', config);
+  async (config) => {
+    config.headers.Authorization = `Bearer ${await getValidToken()}`;
+    config = setContentType(config);
     return config;
   },
   (error) => {
@@ -23,10 +58,15 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
-    console.log('Response received:', response);
     return response;
   },
-  (error) => {
+  async (error) => {
+    if (error.response && error.response.status === 401) {
+      accessToken = null;
+      const originalRequest = error.config;
+      originalRequest.headers.Authorization = `Bearer ${await getNewToken()}`;
+      return api(originalRequest);
+    }
     console.error('Response error:', error);
     return Promise.reject(error);
   }

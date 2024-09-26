@@ -85,6 +85,12 @@ watch(
 
 const imgFormItem = [
   {
+    id: 'author',
+    label: '作者',
+    required: true,
+    rules: requiredRules(),
+  },
+  {
     id: 'title',
     label: '圖片名稱',
     required: true,

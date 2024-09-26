@@ -2,12 +2,18 @@
   <BaseGridLayout :cards="cards">
     <template #card="{ item }">
       <v-card
-        class=""
+        class="pa-4"
         border
         outlined
-        @click="() => emit('navigate-to-gallery-info', item.gallery_id)"
+        @click="() => emit('navigate-to-gallery-info', item.uuid)"
       >
-        <v-img aspect-ratio="1/1" src="images/three-umbrella.jpg" cover></v-img>
+        <v-img
+          aspect-ratio="1/1"
+          :src="item.images[0].image_path"
+          cover
+          class="img-container"
+          style="aspect-ratio: 1/1"
+        ></v-img>
         <v-card-title>{{ item.title }}</v-card-title>
         <v-card-text class="">{{ item.content }}</v-card-text>
       </v-card>
@@ -30,4 +36,7 @@ const emit = defineEmits(['navigate-to-gallery-info']);
 const cards = computed(() => props.cards);
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.img-container {
+}
+</style>

@@ -4,9 +4,15 @@ export default {
   async postImg(userFormData, imgFormData) {
     const formdata = new FormData();
     formdata.append('name', userFormData.name);
+    formdata.append('nid', userFormData.idNo);
     formdata.append('email', userFormData.email);
     formdata.append('phone', userFormData.phone);
+    formdata.append('author', imgFormData.author);
+    formdata.append('title', imgFormData.title);
+    formdata.append('description', imgFormData.description);
     formdata.append('images[]', imgFormData.img);
+
+    console.log(userFormData, imgFormData);
     for (let [key, value] of formdata.entries()) {
       if (value instanceof File) {
         console.log(key, value.name);
@@ -14,17 +20,20 @@ export default {
         console.log(key, value);
       }
     }
+
     const data = await apiClient.postImgApi(formdata);
     return data;
   },
 
-  async getGalleryInfo() {
-    const response = await apiClient.getGalleryInfoApi();
-    return response;
+  async getGalleryInfo(uuid) {
+    const response = await apiClient.getGalleryInfoApi(uuid);
+    console.log(response);
+    // return response.data.data;
+    return response.data;
   },
 
   async getGalleryList() {
     const response = await apiClient.getGalleryListApi();
-    return response.data;
+    return [response.data.data, response.data.pagination];
   },
 };
