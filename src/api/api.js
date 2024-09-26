@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-const API_URL = '/api';
-const TOKEN_URL = '/oauth/token';
+const API_URL =
+  import.meta.env.VITE_API_URL || 'https://event-site.org/keelung/api';
+const TOKEN_URL =
+  import.meta.env.VITE_TOKEN_URL ||
+  'https://event-site.org/keelung/oauth/token';
 
 const CLIENT_ID = '1';
 const CLIENT_SECRET = 'Zt6JQhpav1KBvSC3JN3PatmoQgrsmf73PgG7qxvu';
