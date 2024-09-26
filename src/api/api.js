@@ -60,6 +60,10 @@ api.interceptors.request.use(
   async (config) => {
     config.headers.Authorization = `Bearer ${await getValidToken()}`;
     config = setContentType(config);
+
+    const corsAnywhereUrl = 'https://cors-anywhere.herokuapp.com/';
+    config.url = corsAnywhereUrl + config.url;
+
     return config;
   },
   (error) => {
