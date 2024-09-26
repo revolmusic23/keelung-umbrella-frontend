@@ -7,7 +7,7 @@
         variant="text"
         @click="dialog = false"
       ></v-btn>
-      <v-img src="images/family-multi.svg" :width="100" class=""></v-img>
+      <v-img src="images/family-multi.svg" class=""></v-img>
       <v-card-text>
         一起「傘人」1～2～3！ <br />
         傘人家族創意合照 手機攝影比賽
@@ -43,6 +43,7 @@ const dialog = ref(true);
 .v-img {
   left: 50%;
   transform: translate(-50%, 0);
+  width: 20vw;
 }
 .v-card-text {
   text-align: center;

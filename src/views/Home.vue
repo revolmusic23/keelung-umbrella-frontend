@@ -43,7 +43,7 @@
             <v-img src="images/toy-1.png" contain></v-img>
           </div>
           <div :class="textInfoClass">
-            <h4 class="orange-bold-text">大傘</h4>
+            <h2 class="orange-bold-text">大傘</h2>
             <p class="text-sm-center">
               撐著長傘，以優雅的姿態瀏覽基隆雨都的各種風貌。
             </p>
@@ -54,7 +54,7 @@
             <v-img src="images/toy-2.png" contain></v-img>
           </div>
           <div :class="textInfoClass">
-            <h4 class="orange-bold-text">小傘</h4>
+            <h2 class="orange-bold-text">小傘</h2>
             <p class="text-sm-center">頂著小傘，活潑且愉快的穿梭在大街小巷。</p>
           </div>
         </div>
@@ -63,7 +63,7 @@
             <v-img src="images/toy-3.png" contain></v-img>
           </div>
           <div :class="textInfoClass">
-            <h4 class="orange-bold-text">小雲</h4>
+            <h2 class="orange-bold-text">小雲</h2>
             <p class="text-sm-center">
               雲朵帶的雨滴，加入成為基隆傘人家族的一員。
             </p>
@@ -105,8 +105,22 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 <style scoped lang="scss">
 .img-container {
   margin-bottom: 1rem;
+  position: relative;
   width: 200px;
   height: 200px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(#164993, 0.1);
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   @media only screen and (max-width: 960px) {
     width: 100px;
     height: 100px;
