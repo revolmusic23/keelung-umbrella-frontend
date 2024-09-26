@@ -13,7 +13,7 @@
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import GalleryGrid from '@/components/Grid/GalleryGrid.vue';
-import galleryService from '@/services/galleryService';
+import services from '@/services/services';
 
 const router = useRouter();
 
@@ -26,7 +26,7 @@ onMounted(async () => {
 });
 
 const getGalleryList = async ({ done }) => {
-  const response = await galleryService.getGalleryList(page, pageSize);
+  const response = await services.getGalleryList(page, pageSize);
   galleryList.value.push(...response);
   console.log('galleryList:', galleryList.value);
   done('ok');

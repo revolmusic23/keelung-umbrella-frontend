@@ -1,35 +1,29 @@
-import axios from 'axios';
+import { postImgResponse } from '@/utils/mockData';
+import api from './api';
 
-const BASE_URL = 'https://event-site.org/keelung/api';
+import {
+  getGalleryInfoResponse,
+  getGalleryListResponse,
+} from '@/utils/mockData';
 
-const apiClient = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    'Content-Type': 'multipart/form-data',
+export default {
+  async postImgApi(formData) {
+    try {
+      const response = await api.post('/submit', formData);
+      console.log(response);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
   },
-});
 
-// 請求攔截器
-apiClient.interceptors.request.use(
-  (config) => {
-    console.log('Request sent:', config);
-    return config;
+  async getGalleryInfoApi(params) {
+    const response = getGalleryInfoResponse;
+    return response.data;
   },
-  (error) => {
-    console.error('Request error:', error);
-    return Promise.reject(error);
-  }
-);
 
-apiClient.interceptors.response.use(
-  (response) => {
-    console.log('Response received:', response);
-    return response;
+  async getGalleryListApi(params) {
+    const response = getGalleryListResponse;
+    return response.data;
   },
-  (error) => {
-    console.error('Response error:', error);
-    return Promise.reject(error);
-  }
-);
-
-export default apiClient;
+};

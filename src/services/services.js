@@ -1,4 +1,4 @@
-import uploadApi from '@/api/uploadApi';
+import apiClient from '@/api/apiClient';
 
 export default {
   async postImg(userFormData, imgFormData) {
@@ -14,7 +14,17 @@ export default {
         console.log(key, value);
       }
     }
-    const data = await uploadApi.postImgApi(formdata);
+    const data = await apiClient.postImgApi(formdata);
     return data;
+  },
+
+  async getGalleryInfo() {
+    const response = await apiClient.getGalleryInfoApi();
+    return response;
+  },
+
+  async getGalleryList() {
+    const response = await apiClient.getGalleryListApi();
+    return response.data;
   },
 };

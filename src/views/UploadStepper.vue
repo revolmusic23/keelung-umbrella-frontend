@@ -55,7 +55,7 @@
 <script setup>
 import { reactive, ref, computed, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import uploadService from '@/services/uploadService';
+import services from '@/services/services';
 import UserForm from '@/components/Upload/UserForm.vue';
 import UploadImage from '@/components/Upload/UploadImage.vue';
 import PolaroidPreview from '@/components/Upload/PolaroidPreview.vue';
@@ -112,7 +112,7 @@ const submitImg = async () => {
 const submitAll = async () => {
   try {
     loadingSubmit.value = true;
-    const response = await uploadService.postImg(userFormData, imgFormData);
+    const response = await services.postImg(userFormData, imgFormData);
     console.log(response);
     if (response) {
       router.push({

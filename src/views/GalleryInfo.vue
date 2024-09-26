@@ -17,7 +17,7 @@
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
-import galleryService from '@/services/galleryService';
+import services from '@/services/services';
 import PolaroidImage from '@/components/PolaroidImage.vue';
 
 const route = useRoute();
@@ -25,7 +25,7 @@ const route = useRoute();
 const galleryInfo = reactive({});
 
 onMounted(async () => {
-  const response = await galleryService.getGalleryInfo(route.query.gallery_id);
+  const response = await services.getGalleryInfo(route.query.gallery_id);
   Object.assign(galleryInfo, response);
 });
 </script>
