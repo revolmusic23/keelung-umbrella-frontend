@@ -7,7 +7,7 @@
     <v-img
       src="images/cloud-opacity.svg"
       width="200"
-      class="position-absolute top-0 right-0 ma-4 d-none d-md-flex"
+      class="position-absolute top-0 right-0 ma-4 d-none d-md-flex scale-animation"
     ></v-img>
 
     <h1 class="page-title">關於傘人家族</h1>
@@ -119,11 +119,31 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   @media only screen and (max-width: 960px) {
     width: 100px;
     height: 100px;
+  }
+}
+
+.scale-animation {
+  animation: scale-animation 10s infinite alternate linear both;
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: scale(1) translateX(0);
+  }
+  50% {
+    transform: scale(0.8) translateX(-20%);
+  }
+  100% {
+    transform: scale(1) translateX(0);
   }
 }
 </style>
