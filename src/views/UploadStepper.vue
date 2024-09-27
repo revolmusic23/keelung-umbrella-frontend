@@ -53,7 +53,7 @@
 </template>
 
 <script setup>
-import { reactive, ref, computed, watch } from 'vue';
+import { reactive, ref, computed, watch, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import services from '@/services/services';
 import UserForm from '@/components/Upload/UserForm.vue';
@@ -81,6 +81,15 @@ const imgFormRef = ref(null);
 const loadingSubmit = ref(false);
 // const showErrorModal = ref(true);
 
+onMounted(() => {
+  const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+  if (userInfo) {
+    userFormData.name = userInfo.name;
+    userFormData.phone = userInfo.phone;
+    userFormData.email = userInfo.email;
+  }
+});
+
 const gotoPrevStep = () => {
   curStep.value--;
 };
@@ -94,6 +103,13 @@ const submitUser = async () => {
     if (valid) {
       curStep.value++;
       // TODO: store user info in localStorage?
+      let userInfo = {
+        name: userFormData.name,
+        phone: userFormData.phone,
+        email: userFormData.email,
+      };
+      localStorage.setItem('userInfo', JSON.stringify(userInfo));
+      
     }
   } catch (error) {
     console.log(error);

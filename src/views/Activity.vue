@@ -13,7 +13,7 @@
     <h1 class="page-title">一起「傘人」1~2~3！</h1>
     <h3 class="page-subtitle">傘人家族創意合照 - 手機攝影比賽</h3>
 
-    <div class="paragraph mt-md-12 position-relative">
+    <div class="paragraph position-relative">
       <v-img
         src="images/cloud-opacity.svg"
         width="160"
