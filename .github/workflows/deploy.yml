@@ -38,7 +38,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_URL: /keelung-umbrella-frontend/
+          VITE_BASE_URL: /UmbrellaMan123/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
