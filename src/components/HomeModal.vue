@@ -9,8 +9,8 @@
       ></v-btn>
       <v-img src="images/family-multi.svg" class=""></v-img>
       <v-card-text>
-        一起「傘人」1～2～3！ <br />
-        傘人家族創意合照 手機攝影比賽
+        <b>一起「傘人」1～2～3！ <br />
+        傘人家族創意合照 手機攝影比賽</b>
       </v-card-text>
       <v-card-actions class="d-flex justify-center">
         <v-btn

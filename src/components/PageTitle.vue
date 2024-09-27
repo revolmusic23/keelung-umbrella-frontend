@@ -1,5 +1,5 @@
 <template>
-  <h4 class="page-title">
+  <h4 class="page-title mt-2">
     <v-icon class="" color="var(--primary-orange)">mdi-square-medium</v-icon>
     {{ title }}
   </h4>

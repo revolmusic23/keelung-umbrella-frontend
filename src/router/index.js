@@ -25,7 +25,7 @@ const routes = [
     name: 'UploadStepper',
     component: () => import('@/views/UploadStepper.vue'),
     meta: {
-      title: '上傳圖片',
+      title: '上傳作品',
     },
   },
   {
