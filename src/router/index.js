@@ -41,7 +41,7 @@ const routes = [
     name: 'Gallery',
     component: () => import('@/views/Gallery.vue'),
     meta: {
-      title: '作品頁',
+      title: '參賽作品',
     },
   },
   {
@@ -55,7 +55,7 @@ const routes = [
     name: 'Links',
     component: () => import('@/views/Links.vue'),
     meta: {
-      title: '友善連結',
+      title: '相關連結',
     },
   },
 ];

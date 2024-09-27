@@ -17,10 +17,10 @@
           class="btn-orange"
           @click="router.push({ name: 'UploadStepper' })"
         >
-          上傳圖片
+          上傳作品
         </v-btn>
-        <v-btn class="btn-blue" @click="router.push({ name: 'Gallery' })">
-          作品頁面
+        <v-btn class="btn-blue" @click="dialog = false">
+          進入網站
         </v-btn>
       </v-card-actions>
     </v-card>
