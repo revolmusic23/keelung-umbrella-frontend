@@ -44,6 +44,10 @@ const dialog = ref(true);
   left: 50%;
   transform: translate(-50%, 0);
   width: 20vw;
+
+  @media only screen and (max-width: 768px) {
+    width: 40vw
+  }
 }
 .v-card-text {
   text-align: center;

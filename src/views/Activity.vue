@@ -7,7 +7,7 @@
     <v-img
       src="images/cloud-opacity.svg"
       width="200"
-      class="position-absolute top-0 right-0 ma-4 d-none d-md-flex"
+      class="position-absolute top-0 right-0 ma-4 d-none d-md-flex scale-animation-1"
     ></v-img>
 
     <h1 class="page-title">一起「傘人」1~2~3！</h1>
@@ -17,7 +17,7 @@
       <v-img
         src="images/cloud-opacity.svg"
         width="160"
-        class="position-absolute left-0 ma-4 d-none d-md-flex"
+        class="position-absolute left-0 ma-4 d-none d-md-flex scale-animation-2"
         style="top: -7rem"
       ></v-img>
 
@@ -33,18 +33,18 @@
       <div class="d-md-flex justify-space-between gx-6">
         <p>
           <span class="font-weight-bold">獎項</span><br />
-          第 1 名：<span class="orange-text font-weight-bold"
+          第 1 名：<span class="orange-text font-weight-bold text-md-h6"
             >LEICA SOFORT 2 拍立得相機</span
           ><br />
-          第 2 名：<span class="orange-text font-weight-bold"
+          第 2 名：<span class="orange-text font-weight-bold text-md-h6"
             >Polaroid Now+ 拍立得相機 </span
           ><br />
-          第 3 名：<span class="orange-text font-weight-bold"
+          第 3 名：<span class="orange-text font-weight-bold text-md-h6"
             >FUJIFILM instax SQUARE SQ1</span
           ><br />
         </p>
         <div
-          class="img-container d-flex w-md-50 w-sm-75 w-100"
+          class="img-container d-flex w-md-50 w-sm-75 w-100 mt-md-0 mt-8"
           style="gap: 1.2rem"
         >
           <v-img src="images/prize-1.png">
@@ -88,7 +88,7 @@
       <p>
         邀請基隆市政府文化觀光局人員及網紅伊米塔擔任評審，選出前三名作品。<br />
         <br />
-        評分項目：
+        <b>評分項目：</b>
       </p>
       <v-table class="border">
         <thead>
@@ -172,16 +172,42 @@ import PageTitle from '@/components/PageTitle.vue';
 
 <style lang="scss" scoped>
 .prize-medal {
-  width: 24px;
-  height: 24px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: yellow;
   color: #ed5d15;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 2px 2px 2px rgba(#000, 0.3);
+
+  @media only screen and (max-width: 768px) {
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+  }
+}
+
+.scale-animation-1 {
+  animation: scale-animation 10s infinite alternate linear both;
+}
+
+.scale-animation-2 {
+  animation: scale-animation 8s -2s infinite alternate linear both;
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
