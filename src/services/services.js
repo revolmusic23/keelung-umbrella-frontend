@@ -12,14 +12,14 @@ export default {
     formdata.append('description', imgFormData.description);
     formdata.append('images[]', imgFormData.img);
 
-    console.log(userFormData, imgFormData);
-    for (let [key, value] of formdata.entries()) {
-      if (value instanceof File) {
-        console.log(key, value.name);
-      } else {
-        console.log(key, value);
-      }
-    }
+    // console.log(userFormData, imgFormData);
+    // for (let [key, value] of formdata.entries()) {
+    //   if (value instanceof File) {
+    //     console.log(key, value.name);
+    //   } else {
+    //     console.log(key, value);
+    //   }
+    // }
 
     const [error, response] = await apiClient.postImgApi(formdata);
 
