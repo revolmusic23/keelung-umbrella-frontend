@@ -31,6 +31,9 @@ const showErrorModal = computed(() => store.state.showErrorModal);
   --primary-orange: rgb(237, 93, 21);
   --primary-orange-hover: rgba(237, 93, 21, 0.3);
   --primary-blue: rgba(22, 73, 147);
+  --primary-water: rgb(0, 158, 220);
+  --primary-green: rgb(84, 155, 53);
+  --primary-yellow: rgb(253, 208, 0);
 }
 
 .v-main {
