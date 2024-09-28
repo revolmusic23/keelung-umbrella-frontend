@@ -79,7 +79,6 @@
   </v-sheet>
 
   <HomeModal />
-  <XScrollToTopButton />
 </template>
 
 <script setup>

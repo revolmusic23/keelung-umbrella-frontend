@@ -58,6 +58,14 @@ const routes = [
       title: '相關連結',
     },
   },
+  {
+    path: '/submissions',
+    name: 'Submissions',
+    component: () => import('@/views/Submissions.vue'),
+    meta: {
+      title: '個人作品',
+    },
+  },
 ];
 
 const router = createRouter({

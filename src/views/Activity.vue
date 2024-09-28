@@ -183,8 +183,6 @@
       </ol>
     </div>
   </v-sheet>
-
-  <XScrollToTopButton />
 </template>
 
 <script setup>
