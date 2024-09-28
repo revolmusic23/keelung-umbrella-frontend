@@ -1,16 +1,20 @@
 <template>
   <v-infinite-scroll :onLoad="getGalleryList" color="orange">
-    <GalleryGrid
-      :cards="galleryList"
-      @navigate-to-gallery-info="navigateToGalleryInfo"
-    />
+    <XBaseGridLayout :cards="galleryList">
+      <template #card="{ item }">
+        <XCardImage
+          @click="navigateToGalleryInfo(item.uuid)"
+          :imgSrc="item.images[0].image_path"
+          :description="item.description"
+        />
+      </template>
+    </XBaseGridLayout>
   </v-infinite-scroll>
 </template>
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
-import GalleryGrid from '@/components/Grid/GalleryGrid.vue';
 import services from '@/services/services';
 
 const router = useRouter();

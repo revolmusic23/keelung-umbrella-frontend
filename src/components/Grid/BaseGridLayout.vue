@@ -16,6 +16,8 @@
 </template>
 
 <script setup>
+import { watch } from 'vue';
+
 const props = defineProps({
   cards: {
     type: Array,

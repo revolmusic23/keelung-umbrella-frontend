@@ -39,7 +39,7 @@ const routes = [
   {
     path: '/gallery',
     name: 'Gallery',
-    component: () => import('@/views/Gallery.vue'),
+    component: () => import('@/views/GalleryList.vue'),
     meta: {
       title: '參賽作品',
     },

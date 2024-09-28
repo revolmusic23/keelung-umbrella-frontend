@@ -1,5 +1,7 @@
 import LoadingCircle from './components/LoadingCircle.vue';
+
 import CardImage from './components/CardImage.vue';
+import BaseGridLayout from './components/Grid/BaseGridLayout.vue';
 
 import BaseModal from './components/Modal/BaseModal.vue';
 import ErrorModal from './components/Modal/ErrorModal.vue';
@@ -11,7 +13,9 @@ import LayoutButtons from './components/Buttons/LayoutButtons.vue';
 export default {
   install: (app) => {
     app.component('XLoadingCircle', LoadingCircle);
+
     app.component('XCardImage', CardImage);
+    app.component('XBaseGridLayout', BaseGridLayout);
 
     app.component('XBaseModal', BaseModal);
     app.component('XErrorModal', ErrorModal);
