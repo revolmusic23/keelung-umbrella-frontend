@@ -9,7 +9,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      title: '首頁',
+      title: '關於傘人家族',
     },
   },
   {

@@ -33,29 +33,17 @@ $primary-blue: var(--primary-blue);
 
 .paragraph-title {
   font-size: 1.6rem;
-  border: 1px solid var(--primary-orange);
+  border: 2px solid #fff;
+  background-color: var(--primary-orange);
   border-radius: 8px;
   padding: 0.2rem 0.8rem;
   display: inline-block;
-  margin: 3rem 0 1rem 0;
+  color: #fff;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.paragraph .v-table {
-  th,
-  td {
-    text-align: center;
-  }
-  th {
-    background: var(--primary-orange);
-    color: #fff;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-  }
-  td {
-    font-size: 1.4rem;
-    font-weight: 700;
-  }
-}
 .paragraph {
   .date-text {
     font-size: 1.4rem;
@@ -92,4 +80,40 @@ $primary-blue: var(--primary-blue);
 
 .text-bold {
   font-weight: 600;
+}
+
+@keyframes cloud-animation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes sun-animation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes drop-animation {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2) translate(-50%, -50%);
+    opacity: 0;
+  }
 }
