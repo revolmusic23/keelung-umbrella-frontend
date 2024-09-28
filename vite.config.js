@@ -6,7 +6,8 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '');
 
   return {
-    base: mode === 'production' ? env.VITE_BASE_URL : '/',
+    // base: mode === 'production' ? env.VITE_BASE_URL : '/',
+    base: mode === 'production' ? '/UmbrellaMan123/' : '/',
     plugins: [vue()],
     css: {
       preprocessorOptions: {
