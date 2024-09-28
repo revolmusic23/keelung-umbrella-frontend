@@ -19,7 +19,7 @@
           {{ item.description }}
         </v-card-text>
 
-        <v-card-actions class="justify-end pa-0">
+        <v-card-actions v-if="$slots.actions" class="justify-end pa-0">
           <slot name="actions" :item="item" />
         </v-card-actions>
       </v-card>

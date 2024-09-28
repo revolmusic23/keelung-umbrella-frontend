@@ -6,7 +6,7 @@
       <v-container>
         <router-view></router-view>
         <XLayoutButtons />
-        <XErrorModal v-if="showErrorModal" />
+        <XErrorModal v-model:showModal="showErrorModal" />
       </v-container>
     </v-main>
 
