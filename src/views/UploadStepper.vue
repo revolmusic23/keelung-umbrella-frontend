@@ -16,24 +16,14 @@
           <UserForm
             ref="userFormRef"
             :userFormData="userFormData"
-            @submit="gotoNextStep"
+            :imgFormData="imgFormData"
+            v-model:imgUrl="imgUrl"
           />
           <v-btn class="mt-2 btn-orange" block @click="submitUser">
             下一步
           </v-btn>
         </v-stepper-window-item>
-        <v-stepper-window-item :value="ALLSTEPS['image'].idx">
-          <UploadImage
-            ref="imgFormRef"
-            :imgFormData="imgFormData"
-            v-model:imgUrl="imgUrl"
-            @submit="submitAll"
-          />
-          <div class="button-container">
-            <v-btn @click="gotoPrevStep" variant="tonal">上一步</v-btn>
-            <v-btn class="btn-orange" @click="submitImg">下一步</v-btn>
-          </div>
-        </v-stepper-window-item>
+
         <v-stepper-window-item :value="ALLSTEPS['polaroid'].idx">
           <PolaroidPreview :imgFormData="imgFormData" :imgUrl="imgUrl" />
           <div class="button-container">
@@ -62,7 +52,6 @@ import { reactive, ref, computed, watch, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import services from '@/services/services';
 import UserForm from '@/components/Upload/UserForm.vue';
-import UploadImage from '@/components/Upload/UploadImage.vue';
 import PolaroidPreview from '@/components/Upload/PolaroidPreview.vue';
 import AgreeModal from '@/components/Modal/AgreeModal.vue';
 
@@ -70,8 +59,7 @@ const router = useRouter();
 
 const ALLSTEPS = {
   user: { idx: 1, title: '基本資料填寫' },
-  image: { idx: 2, title: '圖片上傳' },
-  polaroid: { idx: 3, title: '生成拍立得' },
+  polaroid: { idx: 2, title: '生成拍立得' },
 };
 const curStep = ref(1);
 const totalStep = Object.keys(ALLSTEPS).length;
@@ -88,11 +76,15 @@ const loadingSubmit = ref(false);
 onMounted(() => {
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
   if (userInfo) {
-    userFormData.name = userInfo.name;
-    userFormData.phone = userInfo.phone;
-    userFormData.email = userInfo.email;
+    setUserFormData(userInfo);
   }
 });
+
+const setUserFormData = (userInfo) => {
+  userFormData.name = userInfo.name;
+  userFormData.phone = userInfo.phone;
+  userFormData.email = userInfo.email;
+};
 
 const gotoPrevStep = () => {
   curStep.value--;
@@ -105,7 +97,7 @@ const submitUser = async () => {
   const valid = await userFormRef.value.validate();
   if (valid) {
     storeUserInfo();
-    curStep.value++;
+    gotoNextStep();
   }
 };
 
@@ -116,13 +108,6 @@ const storeUserInfo = () => {
     email: userFormData.email,
   };
   localStorage.setItem('userInfo', JSON.stringify(userInfo));
-};
-
-const submitImg = async () => {
-  const valid = await imgFormRef.value.validate();
-  if (valid) {
-    curStep.value++;
-  }
 };
 
 const submitAll = async () => {

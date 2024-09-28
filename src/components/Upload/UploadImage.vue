@@ -1,5 +1,7 @@
 <template>
-  <v-form ref="imgFormRef">
+  <!-- 下版沒用到就刪 -->
+  <div></div>
+  <!-- <v-form ref="imgFormRef">
     <v-card class="border mb-4" min-height="200">
       <v-img v-if="imgFormData.img" :src="imgUrl"></v-img>
       <v-card-text v-else>
@@ -39,7 +41,7 @@
         density="compact"
       ></component>
     </div>
-  </v-form>
+  </v-form> -->
 </template>
 
 <script setup>
