@@ -46,7 +46,7 @@
         src="images/hand.svg"
         class="hand"
         cover="true"
-        max-height="125%"
+        max-height="150%"
       ></v-img>
       <div class="article-container">
         <div class="article-container-title">
@@ -202,27 +202,6 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 </script>
 
 <style scoped lang="scss">
-@keyframes cloud-animation {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes sun-animation {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 .banner {
   background-color: var(--primary-water);
   position: relative;
@@ -662,21 +641,6 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
         flex-direction: column;
       }
     }
-  }
-}
-
-@keyframes drop-animation {
-  0% {
-    transform: scale(0) translate(-50%, -50%);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(1) translate(-50%, -50%);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(2) translate(-50%, -50%);
-    opacity: 0;
   }
 }
 </style>
