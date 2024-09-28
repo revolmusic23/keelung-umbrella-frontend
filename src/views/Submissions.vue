@@ -23,23 +23,29 @@
 
   <XLoadingCircle v-if="isLoading && !loadingDelete" />
 
-  <GalleryGrid :cards="submissionsList">
-    <template #actions="{ item }">
-      <v-btn
-        @click.stop="deleteImage(item.uuid)"
-        :loading="loadingDelete"
-        class="btn-red"
+  <XBaseGridLayout :cards="submissionsList">
+    <template #card="{ item }">
+      <XCardImage
+        :imgSrc="item.images[0].image_path"
+        :description="item.description"
       >
-        刪除
-      </v-btn>
+        <template #actions>
+          <v-btn
+            @click.stop="deleteImage(item.uuid)"
+            :loading="loadingDelete"
+            class="btn-red"
+          >
+            刪除
+          </v-btn>
+        </template>
+      </XCardImage>
     </template>
-  </GalleryGrid>
+  </XBaseGridLayout>
 </template>
 
 <script setup>
 import { onMounted, ref, computed } from 'vue';
 import { useStore } from 'vuex';
-import GalleryGrid from '@/components/Grid/GalleryGrid.vue';
 import services from '@/services/services';
 
 const store = useStore();
@@ -59,6 +65,10 @@ const detaching_id = ref('');
 
 const errorMessage = ref('');
 
+const showItem = (item) => {
+  console.log(item);
+};
+
 const getSubmissions = async () => {
   errorMessage.value = '';
   submissionsList.value = [];
@@ -77,6 +87,7 @@ const getSubmissions = async () => {
 
 const setSubmissionsList = (data) => {
   submissionsList.value = data.items;
+  console.log('submissionsList:', submissionsList.value);
   userInfo.value = {
     name: data.name,
     phone: data.phone,

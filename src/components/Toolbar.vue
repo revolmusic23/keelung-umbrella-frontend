@@ -48,7 +48,7 @@ const router = useRouter();
 
 const showDrawer = ref(false);
 
-const menu = ['Home' ,'Activity', 'UploadStepper', 'Gallery', 'Links'];
+const menu = ['Home', 'Activity', 'UploadStepper', 'Gallery', 'Links'];
 /**
  * 將主選單轉為 vuetify 要求格式
  * @param {string} item
