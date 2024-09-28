@@ -36,4 +36,16 @@ export default {
     const response = await apiClient.getGalleryListApi();
     return [response.data.data, response.data.pagination];
   },
+
+  async getSubmissions(params) {
+    const [error, response] = await apiClient.getSubmissionsApi(params);
+
+    if (response) {
+      console.log(response);
+      return [undefined, response.data.data];
+    } else {
+      console.log(error.response.data.message);
+      return [error.response.data.message, undefined];
+    }
+  },
 };

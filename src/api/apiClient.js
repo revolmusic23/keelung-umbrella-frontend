@@ -24,12 +24,17 @@ export default {
   },
 
   async getGalleryListApi() {
+    const response = await api.get('/submissions');
+    return response;
+  },
+
+  async getSubmissionsApi(params) {
     try {
-      const response = await api.get('/submissions');
-      return response;
+      const response = await api.post('/submissions/verify', params);
+      console.log(response);
+      return [undefined, response];
     } catch (error) {
-      console.error('Error fetching submissions:', error);
-      throw error;
+      return [error, undefined];
     }
   },
 };

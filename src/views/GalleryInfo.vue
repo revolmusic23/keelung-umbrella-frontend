@@ -55,8 +55,6 @@ const getGalleryInfo = async () => {
     setGalleryInfo(data);
   } catch (error) {
     console.log(error);
-  } finally {
-    // loading.value = false;
   }
 };
 
