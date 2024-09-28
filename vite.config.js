@@ -45,11 +45,6 @@ export default defineConfig(({ mode }) => {
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/oauth/, '/keelung/oauth'),
         },
-        '/storage': {
-          target: 'https://event-site.org',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/storage/, '/keelung/storage'),
-        },
       },
     },
     define: {

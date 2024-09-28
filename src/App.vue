@@ -14,12 +14,14 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
+import { computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import Toolbar from './components/Toolbar.vue';
 import Footer from './components/Footer.vue';
 import ScrollToTopButton from './components/ScrollToTopButton.vue';
+import { useStore } from 'vuex';
 
+const store = useStore();
 const route = useRoute();
 const showToolbar = computed(() => !route.meta.hideToolbar);
 </script>

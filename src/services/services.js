@@ -28,8 +28,8 @@ export default {
   async getGalleryInfo(uuid) {
     const response = await apiClient.getGalleryInfoApi(uuid);
     console.log(response);
-    // return response.data.data;
-    return response.data;
+    return response.data.data;
+    // return response.data;
   },
 
   async getGalleryList() {

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import store from '../store';
 
 // const API_URL = '/api';
 // const TOKEN_URL = '/oauth/token';
@@ -58,6 +59,7 @@ const setContentType = (config) => {
 
 api.interceptors.request.use(
   async (config) => {
+    store.dispatch('setLoading', true);
     config.headers.Authorization = `Bearer ${await getValidToken()}`;
     config = setContentType(config);
 
@@ -67,6 +69,7 @@ api.interceptors.request.use(
     return config;
   },
   (error) => {
+    store.dispatch('setLoading', false);
     console.error('Request error:', error);
     return Promise.reject(error);
   }
@@ -74,6 +77,7 @@ api.interceptors.request.use(
 
 api.interceptors.response.use(
   (response) => {
+    store.dispatch('setLoading', false);
     return response;
   },
   async (error) => {
@@ -83,6 +87,7 @@ api.interceptors.response.use(
       originalRequest.headers.Authorization = `Bearer ${await getNewToken()}`;
       return api(originalRequest);
     }
+    store.dispatch('setLoading', false);
     console.error('Response error:', error);
     return Promise.reject(error);
   }

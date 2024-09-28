@@ -109,7 +109,6 @@ const submitUser = async () => {
         email: userFormData.email,
       };
       localStorage.setItem('userInfo', JSON.stringify(userInfo));
-      
     }
   } catch (error) {
     console.log(error);

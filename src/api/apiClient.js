@@ -17,13 +17,13 @@ export default {
   },
 
   async getGalleryInfoApi(uuid) {
-    const response = getGalleryInfoResponse;
-    // const response = await api.get(`/submissions/${uuid}`);
+    // const response = getGalleryInfoResponse;
+    const response = await api.get(`/submissions/${uuid}`);
     console.log(response);
     return response;
   },
 
-  async getGalleryListApi(params) {
+  async getGalleryListApi() {
     try {
       const response = await api.get('/submissions');
       return response;
