@@ -5,6 +5,8 @@
       @navigate-to-gallery-info="navigateToGalleryInfo"
     />
   </v-infinite-scroll>
+
+  <XScrollToTopButton />
 </template>
 
 <script setup>

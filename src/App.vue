@@ -6,7 +6,6 @@
       <v-container>
         <router-view></router-view>
         <XErrorModal v-if="showErrorModal" />
-        <ScrollToTopButton />
       </v-container>
     </v-main>
 
@@ -19,7 +18,6 @@ import { computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import Toolbar from './components/Toolbar.vue';
 import Footer from './components/Footer.vue';
-import ScrollToTopButton from './components/ScrollToTopButton.vue';
 import { useStore } from 'vuex';
 
 const store = useStore();
