@@ -15,7 +15,13 @@
           style="aspect-ratio: 1/1"
         ></v-img>
         <!-- <v-card-title>{{ item.title }}</v-card-title> -->
-        <v-card-text class="px-0 pb-0 photo-text">{{ item.description }}</v-card-text>
+        <v-card-text class="px-0 pb-0 photo-text">
+          {{ item.description }}
+        </v-card-text>
+
+        <v-card-actions class="justify-end pa-0">
+          <slot name="actions" :item="item" />
+        </v-card-actions>
       </v-card>
     </template>
   </BaseGridLayout>
@@ -38,7 +44,7 @@ const cards = computed(() => props.cards);
 
 <style lang="scss" scoped>
 .img-container {
-  box-shadow: inset 0px 0px 20px rgba(#000, .2);
+  box-shadow: inset 0px 0px 20px rgba(#000, 0.2);
 }
 
 .photo-text {

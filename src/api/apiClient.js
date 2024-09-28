@@ -37,4 +37,16 @@ export default {
       return [error, undefined];
     }
   },
+
+  async deleteImageApi(params) {
+    const response = await api.delete('/submissions/detach', {
+      data: params,
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    });
+    console.log(response);
+    return response;
+  },
 };

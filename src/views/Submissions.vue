@@ -21,8 +21,19 @@
 
   <p v-if="errorMessage">{{ errorMessage }}</p>
 
-  <XLoadingCircle v-if="isLoading" />
-  <GalleryGrid :cards="submissionsList" />
+  <XLoadingCircle v-if="isLoading && !loadingDelete" />
+
+  <GalleryGrid :cards="submissionsList">
+    <template #actions="{ item }">
+      <v-btn
+        @click.stop="deleteImage(item.uuid)"
+        :loading="loadingDelete"
+        class="btn-red"
+      >
+        刪除
+      </v-btn>
+    </template>
+  </GalleryGrid>
 </template>
 
 <script setup>
@@ -33,6 +44,7 @@ import services from '@/services/services';
 
 const store = useStore();
 const isLoading = computed(() => store.state.isLoading);
+const loadingDelete = ref(false);
 
 const showSubmissions = ref(false);
 
@@ -71,6 +83,20 @@ const setSubmissionsList = (data) => {
     email: data.email,
   };
   detaching_id.value = data.detaching_id;
+};
+
+const deleteImage = async (uuid) => {
+  loadingDelete.value = true;
+  const params = {
+    detaching_id: detaching_id.value,
+    image_uuid: uuid,
+  };
+  const [err, response] = await services.deleteImage(params);
+  if (response) {
+    console.log(response);
+    getSubmissions();
+  }
+  loadingDelete.value = false;
 };
 </script>
 
