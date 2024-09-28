@@ -87,17 +87,16 @@ const setSubmissionsList = (data) => {
 
 const deleteImage = async (uuid) => {
   loadingDelete.value = true;
-  try {
-    const params = {
-      detaching_id: detaching_id.value,
-      image_uuid: uuid,
-    };
-    const response = await services.deleteImage(params);
-  } catch (error) {
-  } finally {
-    loadingDelete.value = false;
+  const params = {
+    detaching_id: detaching_id.value,
+    image_uuid: uuid,
+  };
+  const [err, response] = await services.deleteImage(params);
+  if (response) {
+    console.log(response);
     getSubmissions();
   }
+  loadingDelete.value = false;
 };
 </script>
 

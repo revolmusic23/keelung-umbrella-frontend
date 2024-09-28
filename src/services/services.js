@@ -51,7 +51,11 @@ export default {
 
   async deleteImage(params) {
     console.log(params);
-    const response = await apiClient.deleteImageApi(params);
-    return response;
+    try {
+      const response = await apiClient.deleteImageApi(params);
+      return [undefined, response];
+    } catch (error) {
+      return [error, undefined];
+    }
   },
 };
