@@ -61,6 +61,7 @@ const setContentType = (config) => {
 api.interceptors.request.use(
   async (config) => {
     store.dispatch('setLoading', true);
+    store.dispatch('setShowErrorModal', false);
     config.headers.Authorization = `Bearer ${await getValidToken()}`;
     config = setContentType(config);
 
@@ -71,6 +72,7 @@ api.interceptors.request.use(
   },
   (error) => {
     store.dispatch('setLoading', false);
+    store.dispatch('setShowErrorModal', true);
     console.error('Request error:', error);
     return Promise.reject(error);
   }
@@ -79,6 +81,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => {
     store.dispatch('setLoading', false);
+    store.dispatch('setShowErrorModal', false);
     return response;
   },
   async (error) => {
@@ -89,6 +92,7 @@ api.interceptors.response.use(
       return api(originalRequest);
     }
     store.dispatch('setLoading', false);
+    store.dispatch('setShowErrorModal', true);
     console.error('Response error:', error);
     return Promise.reject(error);
   }

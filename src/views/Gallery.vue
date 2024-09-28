@@ -1,12 +1,10 @@
 <template>
-  <!-- <v-container> -->
   <v-infinite-scroll :onLoad="getGalleryList" color="orange">
     <GalleryGrid
       :cards="galleryList"
       @navigate-to-gallery-info="navigateToGalleryInfo"
     />
   </v-infinite-scroll>
-  <!-- </v-container> -->
 </template>
 
 <script setup>
@@ -25,29 +23,25 @@ const pagination = ref({
 const galleryList = ref([]);
 
 const getGalleryList = async ({ done }) => {
-  let tempList;
-  [tempList, pagination.value] = await services.getGalleryList();
+  try {
+    let tempList;
+    [tempList, pagination.value] = await services.getGalleryList();
 
-  galleryList.value.push(...tempList);
-  console.log('galleryList:', galleryList.value);
-  console.log('pagination:', pagination.value);
-  if (pagination.value.current_page < pagination.value.last_page) {
-    done('ok');
-  } else {
+    galleryList.value.push(...tempList);
+    console.log('galleryList:', galleryList.value);
+    console.log('pagination:', pagination.value);
+    if (pagination.value.current_page < pagination.value.last_page) {
+      done('ok');
+    } else {
+      done('empty');
+    }
+  } catch (error) {
     done('empty');
   }
 };
 
 const navigateToGalleryInfo = (uuid) => {
-  console.log(uuid);
-  // router.push({
-  //   name: ''
-  // })
   router.push(`/gallery/${uuid}`);
-  // router.push({
-  //   name: 'GalleryInfo',
-  //   query: { gallery_id: gallery_id },
-  // });
 };
 </script>
 

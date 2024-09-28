@@ -5,6 +5,7 @@
     <v-main>
       <v-container>
         <router-view></router-view>
+        <XErrorModal v-if="showErrorModal" />
         <ScrollToTopButton />
       </v-container>
     </v-main>
@@ -24,6 +25,7 @@ import { useStore } from 'vuex';
 const store = useStore();
 const route = useRoute();
 const showToolbar = computed(() => !route.meta.hideToolbar);
+const showErrorModal = computed(() => store.state.showErrorModal);
 </script>
 
 <style lang="scss">

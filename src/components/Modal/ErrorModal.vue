@@ -7,7 +7,7 @@
         {{ errorMessage }}
       </v-card-text>
       <v-card-actions>
-        <v-btn color="red" variant="elevated" @click="modelValue = false"
+        <v-btn color="red" variant="elevated" @click="showModal = false"
           >關閉</v-btn
         >
       </v-card-actions>
@@ -22,7 +22,7 @@ import { useRouter } from 'vue-router';
 const props = defineProps({
   errorMessage: {
     type: String,
-    default: '發生錯誤，請再試一次。',
+    default: '請重新整理或再試一次。',
   },
   showModal: {
     type: Boolean,
@@ -33,15 +33,6 @@ const emit = defineEmits(['update:showModal']);
 
 const router = useRouter();
 const showModal = ref(true);
-console.log(props.showModal);
-const modelValue = computed(() => ({
-  get: () => {
-    props.showModal;
-    console.log(props.showModal);
-  },
-  set: (value) => emit('update:showModal', value),
-}));
-// console.log(showModal.value);
 </script>
 
 <style scoped lang="scss"></style>
