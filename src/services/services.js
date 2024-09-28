@@ -48,4 +48,10 @@ export default {
       return [error.response.data.message, undefined];
     }
   },
+
+  async deleteImage(params) {
+    console.log(params);
+    const response = await apiClient.deleteImageApi(params);
+    return response;
+  },
 };

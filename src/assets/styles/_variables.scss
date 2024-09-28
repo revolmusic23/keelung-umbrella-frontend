@@ -12,6 +12,10 @@ $primary-blue: var(--primary-blue);
     background-color: $primary-blue !important;
     color: white !important;
   }
+  &-red {
+    background-color: red !important;
+    color: white !important;
+  }
 }
 
 .page-title {
