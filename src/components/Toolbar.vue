@@ -1,9 +1,9 @@
 <template>
-  <v-app-bar fixed class="px-md-12" :elevation="2" color="white">
+  <v-app-bar fixed class="px-md-12" :elevation="2" color="rgb(237, 93, 21)">
     <v-img
       src="images/logo.svg"
-      height="70%"
-      max-width="240"
+      height="100%"
+      max-width="280"
       class="ml-2 cursor-pointer"
       @click="router.push({ name: 'Home' })"
     ></v-img>
@@ -48,7 +48,7 @@ const router = useRouter();
 
 const showDrawer = ref(false);
 
-const menu = ['Activity', 'UploadStepper', 'Gallery', 'Links'];
+const menu = ['Home' ,'Activity', 'UploadStepper', 'Gallery', 'Links'];
 /**
  * 將主選單轉為 vuetify 要求格式
  * @param {string} item
