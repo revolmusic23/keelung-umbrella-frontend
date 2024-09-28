@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="dialog" class="w-100 w-md-75" max-width="500">
-    <v-card class="pa-2 rounded-lg">
+    <v-card class="pa-4 rounded-lg">
       <v-btn
         icon="mdi-close"
         class="position-absolute"
@@ -8,10 +8,8 @@
         @click="dialog = false"
       ></v-btn>
       <v-img src="images/family-multi.svg" class=""></v-img>
-      <v-card-text>
-        <b>一起「傘人」1～2～3！ <br />
-        傘人家族創意合照 手機攝影比賽</b>
-      </v-card-text>
+        <h2 class="modal-title mt-4">一起「傘人」1～2～3！</h2>
+        <h3 class="modal-subtitle mb-4">傘人家族創意合照 手機攝影比賽</h3>
       <v-card-actions class="d-flex justify-center">
         <v-btn
           class="btn-orange"
@@ -43,7 +41,7 @@ const dialog = ref(true);
 .v-img {
   left: 50%;
   transform: translate(-50%, 0);
-  width: 20vw;
+  width: 16vw;
 
   @media only screen and (max-width: 768px) {
     width: 40vw
@@ -54,5 +52,15 @@ const dialog = ref(true);
 }
 .v-card-actions .v-btn {
   width: 100px;
+}
+
+.modal-subtitle {
+  color: var(--primary-orange);;
+}
+
+.modal-title {
+  font-family: 'Noto Sans TC';
+  font-weight: 700;
+  font-size: 1.6rem;
 }
 </style>
