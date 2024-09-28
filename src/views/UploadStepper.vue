@@ -40,7 +40,7 @@
             <v-btn @click="gotoPrevStep" variant="tonal">上一步</v-btn>
             <v-btn
               class="btn-orange"
-              @click="submitAll"
+              @click="toggleModal.agree"
               :loading="loadingSubmit"
               >送出</v-btn
             >
@@ -48,7 +48,12 @@
         </v-stepper-window-item>
       </v-stepper-window>
     </v-stepper>
-    <!-- <ErrorModal v-model:showModal="showErrorModal" /> -->
+
+    <AgreeModal v-model:showModal="showModal.agree" @agree-notice="submitAll" />
+    <XErrorModal
+      v-model:showModal="showModal.error"
+      :errorMessage="errorMessage"
+    />
   </v-container>
 </template>
 
@@ -59,7 +64,7 @@ import services from '@/services/services';
 import UserForm from '@/components/Upload/UserForm.vue';
 import UploadImage from '@/components/Upload/UploadImage.vue';
 import PolaroidPreview from '@/components/Upload/PolaroidPreview.vue';
-// import ErrorModal from '@/components/Modal/ErrorModal.vue';
+import AgreeModal from '@/components/Modal/AgreeModal.vue';
 
 const router = useRouter();
 
@@ -79,7 +84,6 @@ const imgUrl = ref('');
 const userFormRef = ref(null);
 const imgFormRef = ref(null);
 const loadingSubmit = ref(false);
-// const showErrorModal = ref(true);
 
 onMounted(() => {
   const userInfo = JSON.parse(localStorage.getItem('userInfo'));
@@ -98,47 +102,57 @@ const gotoNextStep = () => {
 };
 
 const submitUser = async () => {
-  try {
-    const valid = await userFormRef.value.validate();
-    if (valid) {
-      curStep.value++;
-      // TODO: store user info in localStorage?
-      let userInfo = {
-        name: userFormData.name,
-        phone: userFormData.phone,
-        email: userFormData.email,
-      };
-      localStorage.setItem('userInfo', JSON.stringify(userInfo));
-    }
-  } catch (error) {
-    console.log(error);
+  const valid = await userFormRef.value.validate();
+  if (valid) {
+    storeUserInfo();
+    curStep.value++;
   }
+};
+
+const storeUserInfo = () => {
+  let userInfo = {
+    name: userFormData.name,
+    phone: userFormData.phone,
+    email: userFormData.email,
+  };
+  localStorage.setItem('userInfo', JSON.stringify(userInfo));
 };
 
 const submitImg = async () => {
-  try {
-    const valid = await imgFormRef.value.validate();
-    if (valid) {
-      curStep.value++;
-    }
-  } catch (error) {}
+  const valid = await imgFormRef.value.validate();
+  if (valid) {
+    curStep.value++;
+  }
 };
 
 const submitAll = async () => {
-  try {
-    loadingSubmit.value = true;
-    const response = await services.postImg(userFormData, imgFormData);
-    console.log(response);
-    if (response) {
-      router.push({
-        name: 'UploadComplete',
-      });
-    }
-  } catch (error) {
-    console.log(error);
-  } finally {
-    loadingSubmit.value = false;
+  loadingSubmit.value = true;
+  const [errorMsg, response] = await services.postImg(
+    userFormData,
+    imgFormData
+  );
+
+  if (response) {
+    router.push({
+      name: 'UploadComplete',
+    });
+  } else {
+    errorMessage.value = errorMsg;
+    showModal.error = true;
   }
+  loadingSubmit.value = false;
+};
+
+const errorMessage = ref('');
+const showModal = reactive({
+  agree: false,
+  error: false,
+});
+
+const toggleModal = {
+  agree: () => {
+    showModal.agree = true;
+  },
 };
 </script>
 

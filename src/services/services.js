@@ -21,15 +21,20 @@ export default {
       }
     }
 
-    const data = await apiClient.postImgApi(formdata);
-    return data;
+    const [error, response] = await apiClient.postImgApi(formdata);
+
+    if (response) {
+      console.log('post image response:', response);
+      return [undefined, response.data];
+    } else {
+      return [error.response.data.message, undefined];
+    }
   },
 
   async getGalleryInfo(uuid) {
     const response = await apiClient.getGalleryInfoApi(uuid);
     console.log(response);
     return response.data.data;
-    // return response.data;
   },
 
   async getGalleryList() {

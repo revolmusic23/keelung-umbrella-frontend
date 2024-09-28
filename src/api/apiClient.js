@@ -10,9 +10,10 @@ export default {
   async postImgApi(formData) {
     try {
       const response = await api.post('/submissions', formData);
-      return response.data;
+      return [undefined, response];
     } catch (error) {
       console.log(error);
+      return [error, undefined];
     }
   },
 
