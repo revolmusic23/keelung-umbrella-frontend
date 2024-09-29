@@ -1,10 +1,8 @@
 <template>
-  <v-app-bar fixed class="px-md-12" :elevation="2" color="rgb(237, 93, 21)">
+  <v-app-bar fixed class="px-md-12" height="80" :elevation="2" color="rgb(237, 93, 21)">
     <v-img
       src="images/logo.svg"
-      height="100%"
-      max-width="280"
-      class="ml-2 cursor-pointer"
+      class="ml-2 cursor-pointer logo"
       @click="router.push({ name: 'Home' })"
     ></v-img>
     <v-spacer></v-spacer>
@@ -73,5 +71,20 @@ const menuItems = computed(() => {
 }
 .toolbar-btn:not(.active-btn):hover {
   background-color: var(--primary-orange-hover);
+}
+
+.logo {
+  max-width: 320px;
+  @media screen and (max-width: 1280px) {
+    width: 280px;
+  }
+
+  @media screen and (max-width: 992px) {
+    width: 160px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 120px;
+  }
 }
 </style>

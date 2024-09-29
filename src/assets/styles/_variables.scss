@@ -73,6 +73,15 @@ $primary-blue: var(--primary-blue);
   font-weight: 600;
 }
 
+.yellow-bold-text {
+  color: var(--primary-yellow);
+  font-weight: 700;
+
+  @media screen and (max-width: 600px) {
+    text-align: center;
+  }
+}
+
 .white-bold-text {
   color: #fff;
   font-weight: 600;
@@ -115,5 +124,14 @@ $primary-blue: var(--primary-blue);
   100% {
     transform: scale(2) translate(-50%, -50%);
     opacity: 0;
+  }
+}
+
+@keyframes scale-animation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
