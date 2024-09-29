@@ -8,8 +8,8 @@
         @click="dialog = false"
       ></v-btn>
       <v-img src="images/family-multi.svg" class=""></v-img>
-      <h2 class="modal-title mt-4">一起「傘人」1～2～3！</h2>
-      <h3 class="modal-subtitle mb-4">傘人家族創意合照 手機攝影比賽</h3>
+        <h2 class="modal-title mt-4">一起「傘人」1～2～3！</h2>
+        <h3 class="modal-subtitle mb-4">傘人家族創意合照 - 手機攝影比賽</h3>
       <v-card-actions class="d-flex justify-center">
         <v-btn
           class="btn-orange"

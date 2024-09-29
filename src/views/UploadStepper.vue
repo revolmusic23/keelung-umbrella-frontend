@@ -27,12 +27,12 @@
         <v-stepper-window-item :value="ALLSTEPS['polaroid'].idx">
           <PolaroidPreview :imgFormData="imgFormData" :imgUrl="imgUrl" />
           <div class="button-container">
-            <v-btn @click="gotoPrevStep" variant="tonal">上一步</v-btn>
+            <v-btn @click="gotoPrevStep" variant="tonal">重新編輯</v-btn>
             <v-btn
               class="btn-orange"
               @click="toggleModal.agree"
               :loading="loadingSubmit"
-              >送出</v-btn
+              >確定作品</v-btn
             >
           </div>
         </v-stepper-window-item>

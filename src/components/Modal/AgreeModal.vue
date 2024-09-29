@@ -4,14 +4,14 @@
       <div class="ml-4 mt-2">注意事項</div>
     </template>
     <template #text>
-      <ol class="d-flex flex-column text-start pl-4 pl-md-6 rounded-lg">
+      <ol class="d-flex flex-column text-start pl-4 pl-md-6 rounded-lg list-text">
         <li v-for="(list, idx) in noticeList" :key="idx" class="mb-4">
           {{ list }}
         </li>
       </ol>
       <v-checkbox
         v-model="agreeValue"
-        label="我已詳閱並同意以上注意事項"
+        label="我已詳閱相關參賽辦法並同意遵守以上注意事項"
         class="ml-n2"
         color="var(--primary-orange)"
         hide-details
@@ -62,4 +62,8 @@ watch(showModal, (newVal) => {
 });
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.list-text {
+  font-size: 12px;
+}
+</style>
