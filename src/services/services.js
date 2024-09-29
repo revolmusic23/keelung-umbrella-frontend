@@ -32,9 +32,23 @@ export default {
   },
 
   async getGalleryInfo(uuid) {
-    const response = await apiClient.getGalleryInfoApi(uuid);
-    console.log(response);
-    return response.data.data;
+    try {
+      const response = await apiClient.getGalleryInfoApi(uuid);
+      console.log(response);
+      const data = response.data.data;
+      return [
+        undefined,
+        {
+          src: data.images[0].image_path,
+          title: data.title,
+          description: data.description,
+          author: data.author,
+          number: data.number,
+        },
+      ];
+    } catch (error) {
+      return [error.response.data.message, undefined];
+    }
   },
 
   async getGalleryList() {

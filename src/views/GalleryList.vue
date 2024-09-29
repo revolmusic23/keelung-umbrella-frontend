@@ -3,19 +3,25 @@
     <XBaseGridLayout :cards="galleryList">
       <template #card="{ item }">
         <XCardImage
-          @click="navigateToGalleryInfo(item.uuid)"
+          @click="toggleModal.galleryInfo(item.uuid)"
           :imgSrc="item.images[0].image_path"
           :description="item.description"
         />
       </template>
     </XBaseGridLayout>
   </v-infinite-scroll>
+
+  <GalleryInfoModal
+    v-model:showModal="showModal.galleryInfo"
+    :uuid="selectedUuid"
+  />
 </template>
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import services from '@/services/services';
+import GalleryInfoModal from '@/components/Modal/GalleryInfoModal.vue';
 
 const router = useRouter();
 
@@ -44,8 +50,22 @@ const getGalleryList = async ({ done }) => {
   }
 };
 
-const navigateToGalleryInfo = (uuid) => {
-  router.push(`/gallery/${uuid}`);
+// const navigateToGalleryInfo = (uuid) => {
+//   router.push(`/gallery/${uuid}`);
+// };
+
+const selectedUuid = ref('');
+
+const showModal = reactive({
+  galleryInfo: false,
+});
+
+const toggleModal = {
+  galleryInfo: (uuid) => {
+    selectedUuid.value = uuid;
+    showModal.galleryInfo = true;
+    console.log(selectedUuid.value);
+  },
 };
 </script>
 

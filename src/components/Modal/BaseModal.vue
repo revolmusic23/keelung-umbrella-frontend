@@ -1,16 +1,18 @@
 <template>
   <v-dialog v-model="showModal" class="w-100 w-md-75" max-width="700">
-    <v-card>
-      <v-card-title>
-        <slot name="title"></slot>
-      </v-card-title>
-      <v-card-text>
-        <slot name="text"></slot>
-      </v-card-text>
-      <v-card-actions>
-        <slot name="actions"></slot>
-      </v-card-actions>
-    </v-card>
+    <slot>
+      <v-card>
+        <v-card-title v-if="$slots.title">
+          <slot name="title"></slot>
+        </v-card-title>
+        <v-card-text v-if="$slots.text">
+          <slot name="text"></slot>
+        </v-card-text>
+        <v-card-actions v-if="$slots.actions">
+          <slot name="actions"></slot>
+        </v-card-actions>
+      </v-card>
+    </slot>
   </v-dialog>
 </template>
 

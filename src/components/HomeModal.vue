@@ -8,8 +8,8 @@
         @click="dialog = false"
       ></v-btn>
       <v-img src="images/family-multi.svg" class=""></v-img>
-        <h2 class="modal-title mt-4">一起「傘人」1～2～3！</h2>
-        <h3 class="modal-subtitle mb-4">傘人家族創意合照 手機攝影比賽</h3>
+      <h2 class="modal-title mt-4">一起「傘人」1～2～3！</h2>
+      <h3 class="modal-subtitle mb-4">傘人家族創意合照 手機攝影比賽</h3>
       <v-card-actions class="d-flex justify-center">
         <v-btn
           class="btn-orange"
@@ -17,9 +17,7 @@
         >
           上傳作品
         </v-btn>
-        <v-btn class="btn-blue" @click="dialog = false">
-          進入網站
-        </v-btn>
+        <v-btn class="btn-blue" @click="dialog = false"> 進入網站 </v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -44,7 +42,7 @@ const dialog = ref(true);
   width: 16vw;
 
   @media only screen and (max-width: 768px) {
-    width: 40vw
+    width: 40vw;
   }
 }
 .v-card-text {
@@ -55,7 +53,7 @@ const dialog = ref(true);
 }
 
 .modal-subtitle {
-  color: var(--primary-orange);;
+  color: var(--primary-orange);
 }
 
 .modal-title {
