@@ -6,7 +6,10 @@
       <v-container>
         <router-view></router-view>
         <XLayoutButtons />
-        <XErrorModal v-model:showModal="showErrorModal" />
+        <XErrorModal
+          v-model:showModal="showErrorModal"
+          :errorMessage="errorMessage"
+        />
       </v-container>
     </v-main>
 
@@ -25,6 +28,7 @@ const store = useStore();
 const route = useRoute();
 const showToolbar = computed(() => !route.meta.hideToolbar);
 const showErrorModal = computed(() => store.state.showErrorModal);
+const errorMessage = computed(() => store.state.errorMessage);
 </script>
 
 <style lang="scss">
