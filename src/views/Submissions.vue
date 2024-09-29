@@ -31,8 +31,8 @@
       >
         <template #actions>
           <v-btn
-            @click.stop="deleteImage(item.uuid)"
-            :loading="loadingDelete"
+            @click="toggleModal.delete(item.uuid)"
+            :loading="loadingDelete && item.uuid === delete_image_uuid"
             class="btn-red"
           >
             刪除
@@ -41,12 +41,18 @@
       </XCardImage>
     </template>
   </XBaseGridLayout>
+
+  <DeleteSubmissionModal
+    v-model:showModal="showModal.delete"
+    @confirm="deleteImage"
+  />
 </template>
 
 <script setup>
-import { onMounted, ref, computed } from 'vue';
+import { onMounted, ref, reactive, computed } from 'vue';
 import { useStore } from 'vuex';
 import services from '@/services/services';
+import DeleteSubmissionModal from '@/components/Modal/DeleteSubmissionModal.vue';
 
 const store = useStore();
 const isLoading = computed(() => store.state.isLoading);
@@ -100,7 +106,7 @@ const deleteImage = async (uuid) => {
   loadingDelete.value = true;
   const params = {
     detaching_id: detaching_id.value,
-    image_uuid: uuid,
+    image_uuid: delete_image_uuid.value,
   };
   const [err, response] = await services.deleteImage(params);
   if (response) {
@@ -108,6 +114,19 @@ const deleteImage = async (uuid) => {
     getSubmissions();
   }
   loadingDelete.value = false;
+};
+
+const delete_image_uuid = ref('');
+
+const showModal = reactive({
+  delete: false,
+});
+
+const toggleModal = {
+  delete: (uuid) => {
+    showModal.delete = true;
+    delete_image_uuid.value = uuid;
+  },
 };
 </script>
 
