@@ -16,12 +16,6 @@
       <h4>作者：{{ galleryInfo.author }}</h4>
       <h4>作品名稱：{{ galleryInfo.title }}</h4>
     </div>
-
-    <!-- <PolaroidImage
-      :imgSrc="galleryInfo.src"
-      :title="galleryInfo.title"
-      :description="galleryInfo.description"
-    /> -->
   </v-sheet>
 </template>
 
@@ -30,8 +24,6 @@ import { ref, reactive, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 import services from '@/services/services';
-import { triggerDomToImage } from '@/utils/imgUtils';
-// import PolaroidImage from '@/components/PolaroidImage.vue';
 
 const props = defineProps({
   uuid: String,
@@ -41,37 +33,22 @@ const route = useRoute();
 const store = useStore();
 const isLoading = computed(() => store.state.isLoading);
 
-const galleryInfo = ref({
-  src: '',
-  title: '',
-  description: '',
-});
+const galleryInfo = ref({});
 
 onMounted(() => {
   getGalleryInfo();
 });
 
+const errorMessage = ref('');
+
 const getGalleryInfo = async () => {
   try {
-    const data = await services.getGalleryInfo(props.uuid);
-    console.log(data);
-    setGalleryInfo(data);
+    [errorMessage.value, galleryInfo.value] = await services.getGalleryInfo(
+      props.uuid
+    );
   } catch (error) {
     console.log(error);
   }
-};
-
-const setGalleryInfo = (data) => {
-  galleryInfo.value = {
-    src: data.images[0].image_path,
-    title: data.title,
-    description: data.description,
-    author: data.author,
-  };
-};
-
-const downloadImage = () => {
-  triggerDomToImage('test-image', 'test-image');
 };
 </script>
 
