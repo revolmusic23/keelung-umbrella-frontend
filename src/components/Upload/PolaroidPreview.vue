@@ -28,10 +28,25 @@ const imgSrc = ref('');
 const errorMessage = ref('');
 
 onMounted(async () => {
+  getImage();
+});
+
+const getImage = async () => {
   [errorMessage.value, imgSrc.value] = await services.getPolaroid(
     props.imgFormData
   );
-});
+};
+
+watch(
+  () => props.imgUrl,
+  async (newVal) => {
+    if (newVal) {
+      getImage();
+    } else {
+      imgSrc.value = '';
+    }
+  }
+);
 
 // const loadingDownload = ref(false);
 
