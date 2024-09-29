@@ -87,13 +87,6 @@ const userFormData = props.userFormData;
 const userFormItem = [
   { id: 'name', label: '姓名', required: true, rules: requiredRules() },
   {
-    id: 'idNo',
-    label: '身分證字號',
-    required: true,
-    counter: 10,
-    rules: idNoRules(),
-  },
-  {
     id: 'phone',
     label: '手機號碼',
     required: true,
@@ -129,18 +122,6 @@ watch(
 );
 
 const imgFormItem = [
-  {
-    id: 'author',
-    label: '作者',
-    required: true,
-    rules: requiredRules(),
-  },
-  {
-    id: 'title',
-    label: '圖片名稱',
-    required: true,
-    rules: requiredRules(),
-  },
   {
     id: 'description',
     label: `圖片敘述（最多 ${MAX_DESCRIPTION} 字）`,

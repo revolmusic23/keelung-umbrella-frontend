@@ -1,48 +1,53 @@
 <template>
   <div class="mb-8">
-    <XCardImage
-      id="upload-image"
-      :imgSrc="imgUrl"
-      :description="imgFormData.description"
-      color="grey-lighten-4"
-    />
-    <div class="d-flex mt-2 justify-center">
-      <v-btn
-        @click="downloadImage"
-        :loading="loadingDownload"
-        class="btn-blue"
-        rounded
-        >下載</v-btn
-      >
+    <XLoadingCircle v-if="isLoading" />
+    <div class="d-flex flex-colum align-center">
+      <v-img :src="imgSrc"></v-img>
     </div>
   </div>
 </template>
 
 <script setup>
-import { watch, computed, ref } from 'vue';
+import { watch, computed, ref, onMounted } from 'vue';
+import { useStore } from 'vuex';
+
 import { triggerDomToImage } from '@/utils/imgUtils';
 import PolaroidImage from '@/components/PolaroidImage.vue';
+import services from '@/services/services';
+
+const store = useStore();
 
 const props = defineProps({
   imgFormData: Object,
   imgUrl: String,
 });
 
-const loadingDownload = ref(false);
+const isLoading = computed(() => store.state.isLoading);
 
-const downloadImage = async () => {
-  loadingDownload.value = true;
-  try {
-    const response = await triggerDomToImage(
-      'upload-image',
-      `${props.imgFormData.author}-${props.imgFormData.title}`
-    );
-  } catch (error) {
-    console.log('Error in downloadImage', error);
-  } finally {
-    loadingDownload.value = false;
-  }
-};
+const imgSrc = ref('');
+const errorMessage = ref('');
+
+onMounted(async () => {
+  [errorMessage.value, imgSrc.value] = await services.getPolaroid(
+    props.imgFormData
+  );
+});
+
+// const loadingDownload = ref(false);
+
+// const downloadImage = async () => {
+//   loadingDownload.value = true;
+//   try {
+//     const response = await triggerDomToImage(
+//       'upload-image',
+//       `${props.imgFormData.author}-${props.imgFormData.title}`
+//     );
+//   } catch (error) {
+//     console.log('Error in downloadImage', error);
+//   } finally {
+//     loadingDownload.value = false;
+//   }
+// };
 </script>
 
 <style></style>

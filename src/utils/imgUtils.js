@@ -19,3 +19,10 @@ export const triggerDomToImage = async (targetId, fileName = 'test') => {
   link.href = dataUrl;
   link.click();
 };
+
+export const downloadFile = (url, fileName) => {
+  const link = document.createElement('a');
+  link.download = fileName;
+  link.href = url;
+  link.click();
+};

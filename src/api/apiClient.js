@@ -17,6 +17,11 @@ export default {
     }
   },
 
+  async getPolaroidApi(formData) {
+    const response = await api.post('/submissions/process', formData);
+    return response;
+  },
+
   async getGalleryInfoApi(uuid) {
     // const response = getGalleryInfoResponse;
     const response = await api.get(`/submissions/${uuid}`);

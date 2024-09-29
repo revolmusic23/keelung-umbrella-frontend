@@ -3,8 +3,8 @@
 
   <div class="text-center d-flex justify-center align-center ga-2 my-4">
     <v-text-field
-      v-model="nid"
-      label="請輸入身分證字號"
+      v-model="phone"
+      label="請輸入手機號碼"
       density="compact"
       variant="outlined"
       hide-details
@@ -60,7 +60,7 @@ const loadingDelete = ref(false);
 
 const showSubmissions = ref(false);
 
-const nid = ref('');
+const phone = ref('');
 const userInfo = ref({
   name: '',
   phone: '',
@@ -80,7 +80,7 @@ const getSubmissions = async () => {
   submissionsList.value = [];
 
   const params = {
-    nid: nid.value,
+    phone: phone.value,
   };
   const [errMsg, data] = await services.getSubmissions(params);
   if (data) {
