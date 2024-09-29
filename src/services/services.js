@@ -31,6 +31,19 @@ export default {
     }
   },
 
+  async getPolaroid(imgFormData) {
+    const formdata = new FormData();
+    formdata.append('description', imgFormData.description);
+    formdata.append('images[]', imgFormData.img);
+
+    try {
+      const response = await apiClient.getPolaroidApi(formdata);
+      return [undefined, response.data.data.images[0].framed_image_path];
+    } catch (error) {
+      return [error, undefined];
+    }
+  },
+
   async getGalleryInfo(uuid) {
     try {
       const response = await apiClient.getGalleryInfoApi(uuid);

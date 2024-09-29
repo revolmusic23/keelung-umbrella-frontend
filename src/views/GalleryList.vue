@@ -2,11 +2,14 @@
   <v-infinite-scroll :onLoad="getGalleryList" color="orange">
     <XBaseGridLayout :cards="galleryList">
       <template #card="{ item }">
-        <XCardImage
+        <v-img
           @click="toggleModal.galleryInfo(item.uuid)"
-          :imgSrc="item.images[0].image_path"
-          :description="item.description"
-        />
+          :src="item.images[0].framed_image_path"
+          placeholder="載入中"
+        ></v-img>
+        <!-- <div class="mt-2 d-flex justify-center">
+          <v-btn class="btn-blue" rounded>下載</v-btn>
+        </div> -->
       </template>
     </XBaseGridLayout>
   </v-infinite-scroll>

@@ -22,6 +22,8 @@
         src="images/sun.svg"
         class="sun"
       ></v-img>
+      <v-img src="images/flash.png" class="flash-1"></v-img>
+      <v-img src="images/flash.png" class="flash-2"></v-img>
       <div class="banner-container">
         <div
           class="d-flex flex-sm-row flex-column align-center"
@@ -30,7 +32,8 @@
           <v-img
             src="images/umb-family.png"
             class="banner-container-img d-flex text-center"
-          ></v-img>
+          >
+          </v-img>
           <div
             class="d-flex flex-column align-sm-start align-center justify-end"
           >
@@ -42,12 +45,6 @@
     </header>
 
     <article class="article">
-      <v-img
-        src="images/hand.svg"
-        class="hand"
-        cover="true"
-        max-height="150%"
-      ></v-img>
       <div class="article-container">
         <div class="article-container-title">
           <h4 class="article-container-title-text">關於傘人家族</h4>
@@ -57,11 +54,17 @@
           「傘人家族」是基隆城市指標系統中擔任城市的小小導覽員，將城市色彩和資訊相結合，串聯城市、生活和交通資源，你可以在孝三路商圈、城隍廟、崁仔頂、委託行商圈和許梓桑古厝等地找到他們喔。目前他們已分佈在 17 處，不管你看到的是優雅的「大傘」，俏皮的「小傘」，還是可愛的「小雲」 ，只要看到傘橘色的傘人家族，就趕緊拿起手機掃一掃 QR Code 吧!小傘人們會帶你連接到基隆旅遊網，獲得景點的相關資訊，讓你的基隆旅程更加豐富趣味!
         </p>
       </div>
+      <v-img
+        src="images/hand.png"
+        class="hand"
+        cover="true"
+        max-height="150%"
+      ></v-img>
     </article>
 
     <main class="introduce paragraph d-flex flex-column align-center">
       <h4 class="introduce-title">傘人家族大點名</h4>
-      <div class="introduce-container img-info-container pt-4 d-sm-flex" style="gap: 3rem">
+      <div class="introduce-container img-info-container pt-4 d-sm-flex" style="gap: 1rem">
         <div :class="imgInfoClass">
           <div class="img-container">
             <v-img src="images/toy-1.png" class="toy" contain></v-img>
@@ -70,9 +73,9 @@
             </div>
           </div>
           <div :class="textInfoClass">
-            <h2 class="orange-bold-text">大傘</h2>
-            <p class="text-sm-center white-bold-text">
-              <b>撐著長傘，以優雅的姿態瀏覽基隆雨都的各種風貌。</b>
+            <h2 class="yellow-bold-text">大傘</h2>
+            <p class="text-sm-center white-bold-text introduce-container-content">
+              <b>撐著長傘，<br>以優雅的姿態瀏覽<br>基隆雨都的各種風貌。</b>
             </p>
           </div>
         </div>
@@ -84,8 +87,8 @@
             </div>
           </div>
           <div :class="textInfoClass">
-            <h2 class="orange-bold-text">小傘</h2>
-            <p class="text-sm-center white-bold-text"><b>頂著小傘，活潑且愉快的穿梭在大街小巷。</b></p>
+            <h2 class="yellow-bold-text">小傘</h2>
+            <p class="text-sm-center white-bold-text introduce-container-content"><b>頂著小傘，<br>活潑且愉快的<br>穿梭在大街小巷。</b></p>
           </div>
         </div>
         <div :class="imgInfoClass">
@@ -96,9 +99,9 @@
             </div>
           </div>
           <div :class="textInfoClass">
-            <h2 class="orange-bold-text">小雲</h2>
-            <p class="text-sm-center white-bold-text">
-              <b>雲朵帶的雨滴，加入成為基隆傘人家族的一員。</b>
+            <h2 class="yellow-bold-text">小雲</h2>
+            <p class="text-sm-center white-bold-text introduce-container-content">
+              <b>雲朵帶的雨滴，<br>加入成為基隆<br>傘人家族的一員。</b>
             </p>
           </div>
         </div>
@@ -138,11 +141,10 @@
     </main>
 
     <section class="map-area d-flex flex-column align-center">
-      <h4 class="map-area-title">尋找傘人家族</h4>
+      <h4 class="map-area-title">傘人家族的位置</h4>
       <div class="map-area-container">
         <p class="map-area-container-content">
-          基隆市政府為111年開發全新基隆城市指標系統整合城市色彩與資訊，串連城市、生活與交通資源，以地域的山、海、城特色，嶄新的城市意象，建立路徑廊道，透過推廣步行理念，鼓勵民眾用實際的腳步探索基隆。<br>
-          系統指標-城市導覽員「傘人家族」成員，包括小傘、小雲及大傘，讓指標系統不只是基隆地理位置、相關基礎建設的指引，更希望透過視覺整合，呈現城市的嶄新意象與未來展望。<br>
+          基隆市政府為111年開發全新基隆城市指標系統整合城市色彩與資訊，串連城市、生活與交通資源，以地域的山、海、城特色，嶄新的城市意象，建立路徑廊道，透過推廣步行理念，鼓勵民眾用實際的腳步探索基隆。<br><br>
           目前設置傘人家族資訊柱數量共 17 個，位置如下:
         </p>
         <div class="map-area-container-list">
@@ -194,7 +196,7 @@ const SUBTITLE = '〈傘人家族〉創意合照競賽';
 const imgInfoClass = [
   'img-info',
   'd-flex',
-  'flex-sm-column',
+  'flex-column',
   'align-center',
   'w-sm-33',
 ];
@@ -287,6 +289,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     }
 
     &-img {
+      position: relative;
       transform: translateY(20%);
       max-width: 400px;
 
@@ -312,7 +315,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     top: 20px;
     animation: cloud-animation 10s infinite alternate linear both;
 
-    @media only screen and (max-width: 992px) {
+    @media only screen and (max-width: 1280px) {
       width: 250px;
     }
 
@@ -365,6 +368,35 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
       left: 80px;
     }
   }
+
+  .flash-1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 60%;
+    left: 7%;
+    animation: scale-animation 1s -0.5s infinite alternate linear both;
+
+    @media only screen and (max-width: 600px) {
+      top: 40%;
+      left: 5%;
+    }
+  }
+
+  .flash-2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 85%;
+    left: 45%;
+    animation: scale-animation 1s infinite alternate linear both;
+
+    @media only screen and (max-width: 600px) {
+      top: 50%;
+      left: auto;
+      right: 5%;
+    }
+  }
 }
 
 .article {
@@ -372,6 +404,10 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
   background-color: var(--primary-green);
   width: 100%;
   padding: 2rem 0 4rem 0;
+
+  @media only screen and (max-width: 600px) {
+    padding: 2rem 0 0 0;
+  }
 
   &-container {
     width: 80%;
@@ -444,8 +480,14 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
       height: 45vw;
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
       display: none;
+    }
+
+    @media only screen and (max-width: 600px) {
+      position: relative;
+      width: 100%;
+      height: 150%;
     }
   }
 }
@@ -469,8 +511,10 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
   }
 
   &-container {
+    position: relative;
     width: 80%;
     margin: 0 auto;
+    z-index: 10;
 
     @media only screen and (max-width: 600px) {
       width: 90%;
@@ -479,8 +523,13 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     .img-container {
       margin-bottom: 1rem;
       position: relative;
-      width: 200px;
-      height: 200px;
+      width: 250px;
+      height: 250px;
+
+      @media only screen and (max-width: 1280px) {
+        width: 200px;
+        height: 200px;
+      }
 
       .toy {
         z-index: 10;
@@ -495,57 +544,42 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
         transform: translate(-50%, -50%);
         z-index: 0;
 
-        @media only screen and (max-width: 768px) {
-          display: none;
-        }
-
         .drop {
           position: absolute;
           background-color: #fff;
+          opacity: 0.2;
           left: 50%;
           top: 50%;
-          width: 100%;
-          height: 100%;
+          width: 80%;
+          height: 80%;
           transform: translate(-50%, -50%);
           border-radius: 50%;
           transform-origin: top left;
-          animation: drop-animation 4s infinite both;
         }
 
         &::before {
           content: '';
           position: absolute;
-          width: 50%;
-          height: 50%;
+          width: 60%;
+          height: 60%;
           background-color: #fff;
+          opacity: 0.05;
           border-radius: 50%;
           left: 50%;
           top: 50%;
           transform: translate(-50%, -50%);
           transform-origin: top left;
-          animation: drop-animation 4s -1s infinite both;
-        }
-
-        &::after {
-          content: '';
-          position: absolute;
-          width: 70%;
-          height: 70%;
-          background-color: #fff;
-          border-radius: 50%;
-          left: 50%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          transform-origin: top left;
-          animation: drop-animation 4s -0.5s infinite both;
         }
       }
+    }
 
-      
+    &-content {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 300;
 
-      @media only screen and (max-width: 960px) {
-        width: 100px;
-        height: 100px;
+      @media screen and (max-width: 600px) {
+        text-align: center;
+        margin-bottom: 30px;
       }
     }
   }
@@ -554,8 +588,9 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 		position: absolute;
 		width: 100%;height: 100%;
 		left: 0;top: 0;
-		z-index: 100;
+		z-index: 0;
 		overflow: hidden;
+
 		[class^="rain"] {
 			width: 2px;
       height: 2px;

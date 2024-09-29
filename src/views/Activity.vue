@@ -9,6 +9,9 @@
       <v-img src="images/cloud.svg" class="cloud-2"></v-img>
       <v-img src="images/cloud.svg" class="cloud-3"></v-img>
       <v-img src="images/sun.svg" class="sun"></v-img>
+      <v-img src="images/flash.png" class="flash-1"></v-img>
+      <v-img src="images/flash.png" class="flash-2"></v-img>
+      
       <div class="banner-container">
         <div
           class="d-flex flex-sm-row flex-column align-center"
@@ -45,9 +48,8 @@
 
     <main class="information">
       <div class="information-container">
+        <h3 class="paragraph-title mb-0">活動獎項</h3>
         <div class="d-lg-flex justify-space-between align-end gx-6">
-          <h3 class="paragraph-title">活動獎項</h3>
-
           <div class="information-container-prize">
             <h4>第 1 名：LEICA 徠卡 SOFORT 2 拍立得相機</h4>
             <h4>
@@ -57,16 +59,16 @@
             <h4>第 3 名：FUJIFILM 富士 instax SQUARE SQ1 拍立得相機</h4>
           </div>
           <div
-            class="img-container d-flex w-lg-50 w-md-75 w-sm-75 w-100 mt-lg-0 mt-8"
+            class="img-container d-flex w-lg-50 w-md-75 w-sm-75 mt-lg-0 mt-8 information-container-photo"
             style="gap: 1.2rem"
           >
-            <v-img src="images/prize-1.png">
+            <v-img src="images/prize-1.png" class="photo-1">
               <div class="prize-medal">1</div>
             </v-img>
-            <v-img src="images/prize-2.png">
+            <v-img src="images/prize-2.png" class="photo-2">
               <div class="prize-medal">2</div>
             </v-img>
-            <v-img src="images/prize-3.png">
+            <v-img src="images/prize-3.png" class="photo-3">
               <div class="prize-medal">3</div>
             </v-img>
           </div>
@@ -126,7 +128,7 @@
     <section class="detail">
       <div class="detail-container">
         <div class="d-sm-flex justify-space-between">
-          <div class="w-sm-33 w-100 mr-sm-10 mr-0">
+          <div class="w-sm-50 w-100 mr-sm-10 mr-0">
             <div class="detail-container-section">
               <h4 class="detail-container-section-title">收件時間</h4>
               <p class="detail-container-section-content">
@@ -143,29 +145,25 @@
               </p>
             </div>
           </div>
-          <div class="w-sm-66 w-100">
+          <div class="w-sm-50 w-100">
             <div class="detail-container-section">
               <h4 class="detail-container-section-title">評分方式</h4>
               <p class="detail-container-section-content">
                 聘邀影像藝術家、設計總監朱善修博士及網紅伊米塔擔任活動評審
               </p>
               <p class="detail-container-section-content mt-6">評分項目</p>
-              <v-table class="border">
-                <thead>
-                  <tr>
-                    <th class="text-center">創意</th>
-                    <th class="text-center">文案</th>
-                    <th class="text-center">品質</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>60%</td>
-                    <td>30%</td>
-                    <td>20%</td>
-                  </tr>
-                </tbody>
-              </v-table>
+              <div class="detail-table">
+                <div class="detail-table-top">
+                  <div class="detail-table-top-item">創意</div>
+                  <div class="detail-table-top-item">文案</div>
+                  <div class="detail-table-top-item">品質</div>
+                </div>
+                <div class="detail-table-bottom">
+                  <div class="detail-table-bottom-item">60%</div>
+                  <div class="detail-table-bottom-item">30%</div>
+                  <div class="detail-table-bottom-item">20%</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -414,6 +412,35 @@ import PageTitle from '@/components/PageTitle.vue';
       left: 80px;
     }
   }
+
+  .flash-1 {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 60%;
+    left: 7%;
+    animation: scale-animation 1s -0.5s infinite alternate linear both;
+
+    @media only screen and (max-width: 600px) {
+      top: 40%;
+      left: 5%;
+    }
+  }
+
+  .flash-2 {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 85%;
+    left: 45%;
+    animation: scale-animation 1s infinite alternate linear both;
+
+    @media only screen and (max-width: 600px) {
+      top: 50%;
+      left: auto;
+      right: 5%;
+    }
+  }
 }
 
 .article {
@@ -504,11 +531,21 @@ import PageTitle from '@/components/PageTitle.vue';
             margin-left: 0;
             display: inline-block;
           }
-
-          @media only screen and (max-width: 600px) {
-            display: none;
-          }
         }
+      }
+    }
+
+    &-photo {
+      width: 85%;
+
+      .photo-1 {
+        width: 45%;
+      }
+      .photo-2 {
+        width: 32%;
+      }
+      .photo-3 {
+        width: 23%;
       }
     }
 
@@ -685,20 +722,56 @@ import PageTitle from '@/components/PageTitle.vue';
         }
       }
 
-      .v-table {
-        th,
-        td {
-          text-align: center;
-        }
-        th {
-          background: var(--primary-orange);
+      .detail-table {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #fff;
+        overflow: hidden;
+        border-radius: 8px;
+        margin-top: 10px;
+
+        &-top {
+          display: flex;
+          justify-content: space-between;
+          background-color: var(--primary-orange);
           color: #fff;
           font-size: 1.2rem;
-          letter-spacing: 1px;
-        }
-        td {
-          font-size: 1.4rem;
           font-weight: 700;
+          
+
+          &-item {
+            font-size: 1.2rem;
+            font-weight: 700;
+            width: 100%;
+            padding: 0.2rem;
+            width: 100%;
+            border-right: 1px solid #fff;
+            text-align: center;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
+        }
+
+        &-bottom {
+          display: flex;
+          justify-content: space-between;
+
+          &-item {
+            font-size: 1.4rem;
+            color: var(--primary-orange);
+            font-weight: 700;
+            width: 100%;
+            padding: 0.2rem;
+            background-color: #fff;
+            text-align: center;
+            border-right: 1px solid #ccc;
+
+            &:last-child {
+              border-right: none;
+            }
+          }
         }
       }
     }
