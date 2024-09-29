@@ -124,7 +124,7 @@ watch(
 const imgFormItem = [
   {
     id: 'description',
-    label: `圖片敘述（最多 ${MAX_DESCRIPTION} 字）`,
+    label: `創意的一段文案（最多 ${MAX_DESCRIPTION} 字）`,
     required: true,
     counter: MAX_DESCRIPTION,
     rules: imgDescriptionRules(MAX_DESCRIPTION),
