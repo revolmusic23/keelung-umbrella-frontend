@@ -19,7 +19,7 @@ const router = useRouter();
 const route = useRoute();
 
 const scrollBtnRoutes = ['Home', 'Activity', 'Gallery'];
-const submissionsBtnRoutes = ['UploadStepper', 'Gallery'];
+const submissionsBtnRoutes = ['UploadStepper', 'Gallery', 'GalleryInfo'];
 
 const activeButtons = computed(() => {
   const showButtons = [];

@@ -12,8 +12,10 @@
       :imgSrc="galleryInfo.src"
       :description="galleryInfo.description"
     />
-
-    <h4>作者：{{ galleryInfo.author }}</h4>
+    <div class="gallary-info-paragraph">
+      <h4>作者：{{ galleryInfo.author }}</h4>
+      <h4>作品名稱：{{ galleryInfo.title }}</h4>
+    </div>
 
     <!-- <PolaroidImage
       :imgSrc="galleryInfo.src"
@@ -28,6 +30,7 @@ import { ref, reactive, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useStore } from 'vuex';
 import services from '@/services/services';
+import { triggerDomToImage } from '@/utils/imgUtils';
 // import PolaroidImage from '@/components/PolaroidImage.vue';
 
 const props = defineProps({
@@ -66,6 +69,14 @@ const setGalleryInfo = (data) => {
     author: data.author,
   };
 };
+
+const downloadImage = () => {
+  triggerDomToImage('test-image', 'test-image');
+};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.gallary-info-paragraph {
+  line-height: 2;
+}
+</style>
