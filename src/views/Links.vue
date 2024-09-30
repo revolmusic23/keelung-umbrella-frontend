@@ -17,17 +17,36 @@ import PageTitle from '@/components/PageTitle.vue';
 
 const links = [
   {
-    title: '111年海洋保育創意攝影競賽【人氣票選】－海洋生物組',
-    href: 'https://feversocial.com/ugc/6949',
+    title: '基隆市文化觀光局',
+    href: 'https://www.klccab.gov.tw/',
   },
   {
-    title: 'AGUA Design - Keelung City Wayfinding System Design',
-    href: 'http://www.aguadesign.com.tw/design_show.php?designtype_id=&keywor=&Page=9',
+    title: '基隆市表演藝術',
+    href: 'https://klneartsnew.klccab.gov.tw/',
   },
   {
-    title:
-      '小橘公仔收集一日遊！ 基隆城市指標「橘色傘人家族」萌娃照特搜 可愛小雲.小傘.大傘最新駐點處快追',
-    href: 'https://udn.com/news/story/7205/8136149',
+    title: '基隆市視覺藝術',
+    href: 'https://www.facebook.com/klvisualart/?locale=zh_TW',
+  },
+  {
+    title: '基隆旅遊網',
+    href: 'https://tour.klcg.gov.tw/zh-hant/',
+  },
+  {
+    title: '魅力基隆',
+    href: 'https://www.facebook.com/klcgamore?locale=zh_TW',
+  },
+  {
+    title: '我們都是基隆人',
+    href: 'https://www.facebook.com/groups/196498683754480/',
+  },
+  {
+    title: '基隆海嗨',
+    href: 'https://www.facebook.com/keelunghihi',
+  },
+  {
+    title: '伊米塔IG',
+    href: 'https://www.instagram.com/traveler_evita/',
   },
 ];
 </script>

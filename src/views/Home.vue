@@ -35,10 +35,10 @@
           >
           </v-img>
           <div
-            class="d-flex flex-column align-sm-start align-center justify-end"
+            class="banner-container-word d-flex flex-column align-sm-start align-center justify-end"
           >
-            <h1 class="banner-container-title">一起「傘人」1~2~3!</h1>
-            <h3 class="banner-container-subtitle">傘人家族創意合照 - <br class="break">手機攝影比賽</h3>
+            <h1 class="banner-container-word-title">一起「傘人」1~2~3!</h1>
+            <h3 class="banner-container-word-subtitle">傘人家族創意合照 - <br class="break">手機攝影比賽</h3>
           </div>
         </div>
       </div>
@@ -51,7 +51,7 @@
         </div>
         
         <p class="article-container-content">
-          「傘人家族」是基隆城市指標系統中擔任城市的小小導覽員，將城市色彩和資訊相結合，串聯城市、生活和交通資源，你可以在孝三路商圈、城隍廟、崁仔頂、委託行商圈和許梓桑古厝等地找到他們喔。目前他們已分佈在 17 處，不管你看到的是優雅的「大傘」，俏皮的「小傘」，還是可愛的「小雲」 ，只要看到傘橘色的傘人家族，就趕緊拿起手機掃一掃 QR Code 吧!小傘人們會帶你連接到基隆旅遊網，獲得景點的相關資訊，讓你的基隆旅程更加豐富趣味!
+          「傘人家族」是基隆城市指標系統中擔任城市的小小導覽員，將城市色彩和資訊相結合，串聯城市、生活和交通資源，你可以在孝三路商圈、城隍廟、崁仔頂、委託行商圈和許梓桑古厝等地找到他們喔。目前他們已分佈在 17 處，不管你看到的是優雅的「大傘」，俏皮的「小傘」，還是可愛的「小雲」 ，只要看到傘橘色的傘人家族，就趕緊拿起手機掃一掃 QR Code 吧!小傘人們會帶你連接到基隆旅遊網，獲得景點的相關資訊，讓你的基隆旅程更加豐富趣味！
         </p>
       </div>
       <v-img
@@ -75,7 +75,7 @@
           <div :class="textInfoClass">
             <h2 class="yellow-bold-text">大傘</h2>
             <p class="text-sm-center white-bold-text introduce-container-content">
-              <b>撐著長傘，<br>以優雅的姿態瀏覽<br>基隆雨都的各種風貌。</b>
+              <b>撐著長傘，以優雅的姿態<br>瀏覽基隆雨都的各種風貌。</b>
             </p>
           </div>
         </div>
@@ -88,7 +88,7 @@
           </div>
           <div :class="textInfoClass">
             <h2 class="yellow-bold-text">小傘</h2>
-            <p class="text-sm-center white-bold-text introduce-container-content"><b>頂著小傘，<br>活潑且愉快的<br>穿梭在大街小巷。</b></p>
+            <p class="text-sm-center white-bold-text introduce-container-content"><b>頂著小傘，活潑且<br>愉快的穿梭在大街小巷。</b></p>
           </div>
         </div>
         <div :class="imgInfoClass">
@@ -101,7 +101,7 @@
           <div :class="textInfoClass">
             <h2 class="yellow-bold-text">小雲</h2>
             <p class="text-sm-center white-bold-text introduce-container-content">
-              <b>雲朵帶的雨滴，<br>加入成為基隆<br>傘人家族的一員。</b>
+              <b>雲朵帶的雨滴，加入成為<br>基隆傘人家族的一員。</b>
             </p>
           </div>
         </div>
@@ -144,8 +144,7 @@
       <h4 class="map-area-title">傘人家族的位置</h4>
       <div class="map-area-container">
         <p class="map-area-container-content">
-          基隆市政府為111年開發全新基隆城市指標系統整合城市色彩與資訊，串連城市、生活與交通資源，以地域的山、海、城特色，嶄新的城市意象，建立路徑廊道，透過推廣步行理念，鼓勵民眾用實際的腳步探索基隆。<br><br>
-          目前設置傘人家族資訊柱數量共 17 個，位置如下:
+          目前設置傘人家族資訊柱數量共 17 個，位置如下：
         </p>
         <div class="map-area-container-list">
           <ul>
@@ -211,6 +210,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 
   @media only screen and (max-width: 600px) {
     padding: 50px 20px;
+    padding-bottom: 0;
   }
 
   &-container {
@@ -223,67 +223,75 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
       width: 90%;
     }
 
-    &-title {
-      font-size: 3.2vw;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 900;
-      color: #fff;
-      text-shadow: 2px 2px 4px var(--primary-blue);
-      white-space: nowrap;
-      border-bottom: 3px solid var(--primary-yellow);
-
-      @media only screen and (max-width: 1600px) {
-        font-size: 3.6vw;
-        border-bottom: 2px solid var(--primary-yellow);
-      }
-
-      @media only screen and (max-width: 992px) {
-        font-size: 4.2vw;
-      }
+    &-word {
 
       @media only screen and (max-width: 600px) {
-        font-size: 36px;
+        order: 1;
       }
 
-      @media only screen and (max-width: 400px) {
-        font-size: 32px;
-      }
-    }
+      &-title {
+        font-size: 3.2vw;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 900;
+        color: #fff;
+        text-shadow: 2px 2px 4px var(--primary-blue);
+        white-space: nowrap;
+        border-bottom: 3px solid var(--primary-yellow);
+        padding-bottom: 5px;
 
-    &-subtitle {
-      font-size: 1.6vw;
-      font-weight: 700;
-      margin-top: 5px;
-      color: var(--primary-yellow);
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      width: 100%;
-      text-align: right;
-      white-space: nowrap;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 700;
-
-      @media only screen and (min-width: 601px) and (max-width: 1280px) {
-          font-size: 2.4vw;
+        @media only screen and (max-width: 1600px) {
+          font-size: 3.6vw;
+          border-bottom: 2px solid var(--primary-yellow);
         }
 
-      @media only screen and (max-width: 600px) {
-        font-size: 20px;
-        text-align: center;
-      }
+        @media only screen and (max-width: 992px) {
+          font-size: 4.2vw;
+        }
 
-      @media only screen and (max-width: 400px) {
-        white-space: wrap;
-      }
-
-      .break {
-        display: none;
-
-        @media only screen and (min-width: 601px) and (max-width: 1280px) {
-          display: block;
+        @media only screen and (max-width: 600px) {
+          font-size: 36px;
         }
 
         @media only screen and (max-width: 400px) {
-          display: block;
+          font-size: 32px;
+        }
+      }
+
+      &-subtitle {
+        font-size: 1.6vw;
+        font-weight: 700;
+        margin-top: 5px;
+        color: var(--primary-yellow);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        text-align: right;
+        white-space: nowrap;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 700;
+
+        @media only screen and (min-width: 601px) and (max-width: 1280px) {
+            font-size: 2.4vw;
+          }
+
+        @media only screen and (max-width: 600px) {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        @media only screen and (max-width: 400px) {
+          white-space: wrap;
+        }
+
+        .break {
+          display: none;
+
+          @media only screen and (min-width: 601px) and (max-width: 1280px) {
+            display: block;
+          }
+
+          @media only screen and (max-width: 400px) {
+            display: block;
+          }
         }
       }
     }
@@ -303,7 +311,8 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 
       @media only screen and (max-width: 600px) {
         width: 100%;
-        transform: translateY(0%);
+        transform: translateY(10%);
+        order: 2;
       }
     }
   }
@@ -321,6 +330,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 
     @media only screen and (max-width: 768px) {
       width: 200px;
+      top: 35%;
     }
   }
 
@@ -338,7 +348,8 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 
     @media only screen and (max-width: 600px) {
       left: auto;
-      right: 10%;
+      right: 5%;
+      top: 80%;
     }
   }
 
@@ -352,6 +363,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 
     @media only screen and (max-width: 600px) {
       right: 10%;
+      top: 30%;
     }
   }
 
@@ -364,7 +376,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     animation: sun-animation 20s infinite alternate linear both;
 
     @media only screen and (max-width: 768px) {
-      top: 40px;
+      top: 40%;
       left: 80px;
     }
   }
@@ -378,8 +390,8 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     animation: scale-animation 1s -0.5s infinite alternate linear both;
 
     @media only screen and (max-width: 600px) {
-      top: 40%;
-      left: 5%;
+      top: 70%;
+      left: 0%;
     }
   }
 
@@ -392,7 +404,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     animation: scale-animation 1s infinite alternate linear both;
 
     @media only screen and (max-width: 600px) {
-      top: 50%;
+      top: 55%;
       left: auto;
       right: 5%;
     }
@@ -406,7 +418,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
   padding: 2rem 0 4rem 0;
 
   @media only screen and (max-width: 600px) {
-    padding: 2rem 0 0 0;
+    padding: 3rem 0 0 0;
   }
 
   &-container {
@@ -533,6 +545,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
 
       .toy {
         z-index: 10;
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 1));
       }
 
       .drop-background {
@@ -547,7 +560,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
         .drop {
           position: absolute;
           background-color: #fff;
-          opacity: 0.2;
+          opacity: 0.6;
           left: 50%;
           top: 50%;
           width: 80%;
@@ -563,7 +576,7 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
           width: 60%;
           height: 60%;
           background-color: #fff;
-          opacity: 0.05;
+          opacity: 0.3;
           border-radius: 50%;
           left: 50%;
           top: 50%;
@@ -576,6 +589,12 @@ const textInfoClass = ['text-sm-center', 'w-75', 'w-sm-100'];
     &-content {
       font-family: 'Noto Sans TC', sans-serif;
       font-weight: 300;
+
+      @media screen and (min-width: 600px) and (max-width: 768px) {
+        br {
+          display: none;
+        }
+      }
 
       @media screen and (max-width: 600px) {
         text-align: center;

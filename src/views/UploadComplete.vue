@@ -14,13 +14,13 @@
     ></v-icon>
 
     <h2 class="text-h5 mb-6">感謝你報名完成參賽！</h2>
-    <p class="mb-4 text-medium-emphasis text-body-2">
+    <!-- <p class="mb-4 text-medium-emphasis text-body-2">
       <b>感謝你報名完成參賽！<br />
       請點選上方主選單前往其他頁面。</b>
-    </p>
+    </p> -->
     <v-divider class="mb-4"></v-divider>
 
-    <div class="text-end">
+    <div class="text-center">
       <v-btn
         class="text-none"
         color="success"

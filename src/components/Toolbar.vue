@@ -22,7 +22,7 @@
     ></v-app-bar-nav-icon>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="showDrawer" temporary>
+  <v-navigation-drawer v-model="showDrawer" width="160" temporary>
     <v-list>
       <v-list-item
         v-for="item in menuItems"
