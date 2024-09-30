@@ -45,12 +45,6 @@ const routes = [
     },
   },
   {
-    path: '/gallery/:uuid',
-    name: 'GalleryInfo',
-    component: () => import('@/views/GalleryInfo.vue'),
-    props: true,
-  },
-  {
     path: '/links',
     name: 'Links',
     component: () => import('@/views/Links.vue'),
