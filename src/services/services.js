@@ -64,8 +64,12 @@ export default {
     }
   },
 
-  async getGalleryList() {
-    const response = await apiClient.getGalleryListApi();
+  async getGalleryList(page, per_page) {
+    const params = {
+      page: page,
+      per_page: per_page,
+    };
+    const response = await apiClient.getGalleryListApi(params);
     return [response.data.data, response.data.pagination];
   },
 

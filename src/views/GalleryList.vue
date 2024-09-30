@@ -32,13 +32,17 @@ const pagination = ref({
   current_page: 0,
   last_page: Infinity,
 });
+const PER_PAGE = 10;
 
 const galleryList = ref([]);
 
 const getGalleryList = async ({ done }) => {
   try {
     let tempList;
-    [tempList, pagination.value] = await services.getGalleryList();
+    [tempList, pagination.value] = await services.getGalleryList(
+      pagination.value.current_page + 1,
+      PER_PAGE
+    );
 
     galleryList.value.push(...tempList);
     console.log('galleryList:', galleryList.value);
@@ -52,10 +56,6 @@ const getGalleryList = async ({ done }) => {
     done('empty');
   }
 };
-
-// const navigateToGalleryInfo = (uuid) => {
-//   router.push(`/gallery/${uuid}`);
-// };
 
 const selectedUuid = ref('');
 

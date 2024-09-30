@@ -29,8 +29,8 @@ export default {
     return response;
   },
 
-  async getGalleryListApi() {
-    const response = await api.get('/submissions');
+  async getGalleryListApi(params) {
+    const response = await api.get('/submissions', { params });
     return response;
   },
 
