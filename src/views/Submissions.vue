@@ -100,6 +100,9 @@ const setSubmissionsList = (data) => {
     email: data.email,
   };
   detaching_id.value = data.detaching_id;
+  if (submissionsList.value.length === 0) {
+    errorMessage.value = '查無資料';
+  }
 };
 
 const deleteImage = async (uuid) => {
