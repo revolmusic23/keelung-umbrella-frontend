@@ -27,7 +27,7 @@
         <v-stepper-window-item :value="ALLSTEPS['polaroid'].idx">
           <PolaroidPreview :imgFormData="imgFormData" :imgUrl="imgUrl" />
           <div class="button-container">
-            <v-btn @click="gotoPrevStep" variant="tonal">重新編輯</v-btn>
+            <v-btn class="btn-blue" @click="gotoPrevStep" variant="tonal">重新編輯</v-btn>
             <v-btn
               class="btn-orange"
               @click="toggleModal.agree"
@@ -59,7 +59,7 @@ const router = useRouter();
 
 const ALLSTEPS = {
   user: { idx: 1, title: '基本資料填寫' },
-  polaroid: { idx: 2, title: '生成拍立得' },
+  polaroid: { idx: 2, title: '作品檢視' },
 };
 const curStep = ref(1);
 const totalStep = Object.keys(ALLSTEPS).length;

@@ -22,10 +22,10 @@
             class="banner-container-img d-flex text-center"
           ></v-img>
           <div
-            class="d-flex flex-column align-sm-start align-center justify-end"
+            class="banner-container-word d-flex flex-column align-sm-start align-center justify-end"
           >
-            <h1 class="banner-container-title">一起「傘人」1~2~3!</h1>
-            <h3 class="banner-container-subtitle">
+            <h1 class="banner-container-word-title">一起「傘人」1~2~3!</h1>
+            <h3 class="banner-container-word-subtitle">
               傘人家族創意合照 - <br class="break" />手機攝影比賽
             </h3>
           </div>
@@ -40,8 +40,7 @@
         </div>
 
         <p class="article-container-content">
-          10/10～10/31
-          活動期間至基隆市文化廣場與任一傘人家族成員合照，合照對象不限(人、竉物、玩偶、玩具…皆可)，再至活動網站，選擇一張合照並留下一句話上傳作品，即完成參賽，活動結束後將選出前三名最有創意的照片，贈予精美獎品。
+          10/10～10/31 活動期間至基隆市文化廣場與任一傘人家族成員合照，合照對象不限(人、竉物、玩偶、玩具…皆可)，再至活動網站，選擇一張合照並留下一句話上傳作品，即完成參賽，活動結束後將選出前三名最有創意的照片，贈予精美獎品。
         </p>
       </div>
     </article>
@@ -91,9 +90,10 @@
 
         <div class="d-md-flex justify-start align-center mt-12 gx-6">
           <div
-            class="img-container w-25 mt-lg-0 mt-8 mr-6 d-none d-md-flex"
+            class="information-container-example img-container w-25 mt-lg-0 mt-8 mr-6 d-none d-md-flex"
             style="gap: 2rem"
           >
+            <h5>- 作品範例 -</h5>
             <v-img src="images/photo-1.png"></v-img>
           </div>
 
@@ -128,7 +128,7 @@
     <section class="detail">
       <div class="detail-container">
         <div class="d-sm-flex justify-space-between">
-          <div class="w-sm-50 w-100 mr-sm-10 mr-0">
+          <div class="detail-container-left mr-sm-10 mr-0">
             <div class="detail-container-section">
               <h4 class="detail-container-section-title">收件時間</h4>
               <p class="detail-container-section-content">
@@ -145,7 +145,7 @@
               </p>
             </div>
           </div>
-          <div class="w-sm-50 w-100">
+          <div class="detail-container-right">
             <div class="detail-container-section">
               <h4 class="detail-container-section-title">評分方式</h4>
               <p class="detail-container-section-content">
@@ -178,60 +178,22 @@
         <div class="detail-container-section mb-0">
           <h4 class="detail-container-section-title">注意事項</h4>
           <div class="detail-container-section-content">
-            <ol class="pl-4">
-              <li>
-                基隆市政府 員工、評審及配偶及二親等以內血 姻 親 均 不得參與比賽
-                ，有違 反而得獎者，撤銷其參賽與得獎資格。
-              </li>
-              <li>
-                凡上傳作品完成報名參加本活動者，即視為已充分瞭解本辦法中各項條款，
-                且願意完全遵守本活動之各項規定。
-              </li>
-              <li>
-                參賽作品不得含有任何具挑釁、猥褻、毀謗、暴力、情色、種族歧視性或其
-                他任何引人厭惡或不合宜之內容，主辦單位得自行判斷並
-                有權下架作品不另 行通知 。
-              </li>
-              <li>
-                主辦單位保留隨時修正、暫停、終止或解釋本活動之一切及 最
-                終權利（包括 但不限於更換活動、提前終止或延長活動時間之 最
-                終決定權等事項），相關 內容如有變動將於 比賽 活動 網 站 及
-                文化觀光局臉書 另行公告，不另行通知，
-                若有任何異動，以本競賽活動官方網站最新公告為準。
-              </li>
-              <li>
-                若得獎獎項價值累計超過新台幣 1,001 元 含 以上者而未滿 1 8
-                歲之中獎
-                者，視同父母或監護人中獎，由父母或監護人代為領獎，並請附上得獎者及
-                其代領人關係證明影本。
-              </li>
-              <li>
-                本活動如有任何因電腦、網路、技術或其他不可歸責於主辦單位之事由，而
-                使活動參加者所登錄之資料有所遺失、錯誤、無法辨識或毀損所導致資料無
-                效之狀況，主辦單位不負任何法律責任，本活動參加者及獲採用者亦不得異
-                議。如發生前述情形，主辦單位將不做任何通知。
-              </li>
-              <li>
-                本活動參加者應聲明及保證其所填寫或提出之資料均為真實，且未冒用或盜
-                用任何第三人之資料，如冒用或盜用任何第三人資料之法律責任由該參加者
-                自行負擔，概與主辦單位無關，參賽者保證所有填寫或提出之資料均為真實
-                自行負擔，概與主辦單位無關，參賽者保證所有填寫或提出之資料均為真實且正確，且未冒用或盜用任何第三人之資料。如有不實或不正確之情事，將且正確，且未冒用或盜用任何第三人之資料。如有不實或不正確之情事，將被被取消參加或得獎資格。如因此導致主辦單位無法通知其得獎訊息時，主辦取消參加或得獎資格。如因此導致主辦單位無法通知其得獎訊息時，主辦單位不負任何責任，且如有致損害於主辦單位或其他任何第三人，參賽者應單位不負任何責任，且如有致損害於主辦單位或其他任何第三人，參賽者應自負一切相關責任。自負一切相關責任。
-              </li>
-              <li>
-                參賽者在參賽之同時，即代表參賽者同意且未違反與第三者之協議、保證參參賽者在參賽之同時，即代表參賽者同意且未違反與第三者之協議、保證參賽作品未侵犯其他任何個人或實體之版權、商標權、人格權、隱私／公開賽作品未侵犯其他任何個人或實體之版權、商標權、人格權、隱私／公開權、以及智慧財產權，且未有第三者對該參賽作品具備任何權利、所有權、權、以及智慧財產權，且未有第三者對該參賽作品具備任何權利、所有權、主張擁有或相關利益，亦未有違反其他法令情事。如有違反之虞，主辦單位主張擁有或相關利益，亦未有違反其他法令情事。如有違反之虞，主辦單位得立即移除相關內容，並取消其參賽與得獎資格，並追回一切獎項，且參賽得立即移除相關內容，並取消其參賽與得獎資格，並追回一切獎項，且參賽者須自負法律責任。者須自負法律責任。
-              </li>
-              <li>
-                參賽者應尊重評審觀點，對於評審結果不得異議，經評審得獎確定之作品，參賽者應尊重評審觀點，對於評審結果不得異議，經評審得獎確定之作品，不得要求取消得獎資格。不得要求取消得獎資格。
-              </li>
-              <li>
-                若主辦單位因使用參賽者所提供之圖文、照片及其他資料遭第三人請求、索若主辦單位因使用參賽者所提供之圖文、照片及其他資料遭第三人請求、索賠、提出民、刑事訴訟或主張任何法律上之權利，參賽者應賠償主辦單位因賠、提出民、刑事訴訟或主張任何法律上之權利，參賽者應賠償主辦單位因此所生之全部損失與費用。此所生之全部損失與費用。
-              </li>
-              <li>
-                參賽者如因參加本活動或因活動獎項而遭受任何損失，主辦單位不負任何責參賽者如因參加本活動或因活動獎項而遭受任何損失，主辦單位不負任何責任。一旦得獎者領取獎品後，若有遺失或被竊，主辦單位不發給任何證明或任。一旦得獎者領取獎品後，若有遺失或被竊，主辦單位不發給任何證明或補償。補償。
-              </li>
-              <li>
-                本辦法若有其他未盡事宜，悉依主辦單位相關規定或解釋辦理，主辦單位保本辦法若有其他未盡事宜，悉依主辦單位相關規定或解釋辦理，主辦單位保有有最最終之解釋權。終之解釋權。
-              </li>
+            <ol class="pl-4 notice-list">
+              <li>凡上傳作品完成報名參加本活動者，即視為已充分瞭解本辦法中各項條款，且願意完全遵守本活動之各項規定。</li>
+              <li>參賽作品不得含有任何具挑釁、猥褻、毀謗、暴力、情色、種族歧視性或其他任何引人厭惡或不合宜之內容，主辦單位得自行判斷並有權下架作品不另行通知。 </li>
+              <li>主辦單位保留隨時修正、暫停、終止或解釋本活動之一切及最終權利（包括但不限於更換活動、提前終止或延⻑活動時間之最終決定權等事項），相關內容如有變動將於比賽活動網站及文化觀光局臉書另行公告，不另行通知，若有任何異動，以本競賽活動官方網站最新公告為準。</li>
+              <li>若得獎獎項價值累計超過新台幣 1,001 元(含)以上者而未滿 18 歲之中獎者，視同父母或監護人中獎，由父母或監護人代為領獎，並請附上得獎者及其代領人關係證明影本。 </li>
+              <li>本活動如有任何因電腦、網路、技術或其他不可歸責於主辦單位之事由，而使活動參加者所登錄之資料有所遺失、錯誤、無法辨識或毀損所導致資料無效之狀況，主辦單位不負任何法律責任，本活動參加者及獲採用者亦不得異議。
+              如發生前述情形，主辦單位將不做任何通知。 </li>
+              <li>本活動參加者應聲明及保證其所填寫或提出之資料均為真實，且未冒用或盜用任何第三人之資料，如冒用或盜用任何第三人資料之法律責任由該參加者自行負擔，概與主辦單位無關，參賽者保證所有填寫或提出之資料均為真實且正確，且未冒用或盜用任何第三人之資料。
+              如有不實或不正確之情事，將被取消參加或得獎資格。如因此導致主辦單位無法通知其得獎訊息時，主辦單位不負任何責任，且如有致損害於主辦單位或其他任何第三人，參賽者應自負一切相關責任。</li>
+              <li>參賽者在參賽之同時，即代表參賽者同意且未違反與第三者之協議、保證參賽作品未侵犯其他任何個人或實體之版權、商標權、人格權、隱私／公開權、以及智慧財產權，且未有第三者對該參賽作品具備任何權利、所有權、主張擁有或相關利益，亦未有違反其他法令情事。
+              如有違反之虞，主辦單位得立即移除相關內容，並取消其參賽與得獎資格，並追回一切獎項，且參賽者須自負法律責任。 </li>
+              <li>參賽者應尊重評審觀點，對於評審結果不得異議，經評審得獎確定之作品，不得要求取消得獎資格。 </li>
+              <li>若主辦單位因使用參賽者所提供之圖文、照片及其他資料遭第三人請求、索賠、提出民、刑事訴訟或主張任何法律上之權利，參賽者應賠償主辦單位因此所生之全部損失與費用。 </li>
+              <li>參賽者如因參加本活動或因活動獎項而遭受任何損失，主辦單位不負任何責任。一旦得獎者領取獎品後，若有遺失或被竊，主辦單位不發給任何證明或補償。 </li>
+              <li>本辦法若有其他未盡事宜，悉依主辦單位相關規定或解釋辦理，主辦單位保有最終之解釋權。 </li>
+              <li>參賽作品開放參觀民眾下載收藏。 </li>
             </ol>
           </div>
         </div>
@@ -256,6 +218,7 @@ import PageTitle from '@/components/PageTitle.vue';
 
   @media only screen and (max-width: 600px) {
     padding: 50px 20px;
+    padding-bottom: 0;
   }
 
   &-container {
@@ -268,67 +231,75 @@ import PageTitle from '@/components/PageTitle.vue';
       width: 90%;
     }
 
-    &-title {
-      font-size: 3.2vw;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 900;
-      color: #fff;
-      text-shadow: 2px 2px 4px var(--primary-blue);
-      white-space: nowrap;
-      border-bottom: 3px solid var(--primary-yellow);
-
-      @media only screen and (max-width: 1600px) {
-        font-size: 3.6vw;
-        border-bottom: 2px solid var(--primary-yellow);
-      }
-
-      @media only screen and (max-width: 992px) {
-        font-size: 4.2vw;
-      }
+    &-word {
 
       @media only screen and (max-width: 600px) {
-        font-size: 36px;
+        order: 1;
       }
 
-      @media only screen and (max-width: 400px) {
-        font-size: 32px;
-      }
-    }
+      &-title {
+        font-size: 3.2vw;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 900;
+        color: #fff;
+        text-shadow: 2px 2px 4px var(--primary-blue);
+        white-space: nowrap;
+        border-bottom: 3px solid var(--primary-yellow);
+        padding-bottom: 5px;
 
-    &-subtitle {
-      font-size: 1.6vw;
-      font-weight: 700;
-      margin-top: 5px;
-      color: var(--primary-yellow);
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-      width: 100%;
-      text-align: right;
-      white-space: nowrap;
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 700;
+        @media only screen and (max-width: 1600px) {
+          font-size: 3.6vw;
+          border-bottom: 2px solid var(--primary-yellow);
+        }
 
-      @media only screen and (min-width: 601px) and (max-width: 1280px) {
-        font-size: 2.4vw;
-      }
+        @media only screen and (max-width: 992px) {
+          font-size: 4.2vw;
+        }
 
-      @media only screen and (max-width: 600px) {
-        font-size: 20px;
-        text-align: center;
-      }
-
-      @media only screen and (max-width: 400px) {
-        white-space: wrap;
-      }
-
-      .break {
-        display: none;
-
-        @media only screen and (min-width: 601px) and (max-width: 1280px) {
-          display: block;
+        @media only screen and (max-width: 600px) {
+          font-size: 36px;
         }
 
         @media only screen and (max-width: 400px) {
-          display: block;
+          font-size: 32px;
+        }
+      }
+
+      &-subtitle {
+        font-size: 1.6vw;
+        font-weight: 700;
+        margin-top: 5px;
+        color: var(--primary-yellow);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        width: 100%;
+        text-align: right;
+        white-space: nowrap;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 700;
+
+        @media only screen and (min-width: 601px) and (max-width: 1280px) {
+          font-size: 2.4vw;
+        }
+
+        @media only screen and (max-width: 600px) {
+          font-size: 24px;
+          text-align: center;
+        }
+
+        @media only screen and (max-width: 400px) {
+          white-space: wrap;
+        }
+
+        .break {
+          display: none;
+
+          @media only screen and (min-width: 601px) and (max-width: 1280px) {
+            display: block;
+          }
+
+          @media only screen and (max-width: 400px) {
+            display: block;
+          }
         }
       }
     }
@@ -347,7 +318,8 @@ import PageTitle from '@/components/PageTitle.vue';
 
       @media only screen and (max-width: 600px) {
         width: 100%;
-        transform: translateY(0%);
+        transform: translateY(10%);
+        order: 2;
       }
     }
   }
@@ -365,6 +337,7 @@ import PageTitle from '@/components/PageTitle.vue';
 
     @media only screen and (max-width: 768px) {
       width: 200px;
+      top: 35%;
     }
   }
 
@@ -382,7 +355,8 @@ import PageTitle from '@/components/PageTitle.vue';
 
     @media only screen and (max-width: 600px) {
       left: auto;
-      right: 10%;
+      right: 5%;
+      top: 80%;
     }
   }
 
@@ -396,6 +370,7 @@ import PageTitle from '@/components/PageTitle.vue';
 
     @media only screen and (max-width: 600px) {
       right: 10%;
+      top: 30%;
     }
   }
 
@@ -408,7 +383,7 @@ import PageTitle from '@/components/PageTitle.vue';
     animation: sun-animation 20s infinite alternate linear both;
 
     @media only screen and (max-width: 768px) {
-      top: 40px;
+      top: 40%;
       left: 80px;
     }
   }
@@ -422,8 +397,8 @@ import PageTitle from '@/components/PageTitle.vue';
     animation: scale-animation 1s -0.5s infinite alternate linear both;
 
     @media only screen and (max-width: 600px) {
-      top: 40%;
-      left: 5%;
+      top: 70%;
+      left: 0%;
     }
   }
 
@@ -436,7 +411,7 @@ import PageTitle from '@/components/PageTitle.vue';
     animation: scale-animation 1s infinite alternate linear both;
 
     @media only screen and (max-width: 600px) {
-      top: 50%;
+      top: 55%;
       left: auto;
       right: 5%;
     }
@@ -448,6 +423,10 @@ import PageTitle from '@/components/PageTitle.vue';
   background-color: var(--primary-blue);
   width: 100%;
   padding: 2rem 0 0 0;
+
+  @media only screen and (max-width: 600px) {
+    padding: 3rem 0 0 0;
+  }
 
   &-container {
     width: 80%;
@@ -539,13 +518,29 @@ import PageTitle from '@/components/PageTitle.vue';
       width: 85%;
 
       .photo-1 {
-        width: 45%;
+        width: 41%;
       }
       .photo-2 {
-        width: 32%;
+        width: 30%;
       }
       .photo-3 {
-        width: 23%;
+        width: 29%;
+      }
+    }
+
+    &-example {
+      position: relative;
+
+      h5 {
+        position: absolute;
+        font-size: 1rem;
+        bottom: -10px;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+        color: #fff;
       }
     }
 
@@ -692,6 +687,22 @@ import PageTitle from '@/components/PageTitle.vue';
       width: 90%;
     }
 
+    &-left {
+      width: 45%;
+
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
+    &-right {
+      width: 55%;
+
+      @media only screen and (max-width: 600px) {
+        width: 100%;
+      }
+    }
+
     &-section {
       margin-bottom: 30px;
 
@@ -707,6 +718,10 @@ import PageTitle from '@/components/PageTitle.vue';
         color: #fff;
         font-family: 'Noto Sans TC', sans-serif;
         font-weight: 500;
+
+        .notice-list {
+          font-weight: normal;
+        }
 
         span {
           color: var(--primary-yellow);
@@ -743,7 +758,7 @@ import PageTitle from '@/components/PageTitle.vue';
             font-size: 1.2rem;
             font-weight: 700;
             width: 100%;
-            padding: 0.2rem;
+            padding: 0.3rem;
             width: 100%;
             border-right: 1px solid #fff;
             text-align: center;

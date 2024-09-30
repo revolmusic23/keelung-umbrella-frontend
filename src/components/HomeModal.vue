@@ -58,7 +58,7 @@ const dialog = ref(true);
 
 .modal-title {
   font-family: 'Noto Sans TC';
-  font-weight: 700;
+  font-weight: 900;
   font-size: 1.6rem;
 }
 </style>
