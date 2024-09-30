@@ -20,9 +20,17 @@ export const triggerDomToImage = async (targetId, fileName = 'test') => {
   link.click();
 };
 
-export const downloadFile = (url, fileName) => {
-  const link = document.createElement('a');
-  link.download = fileName;
-  link.href = url;
-  link.click();
+export const downloadImg = async (imageUrl, fileName = 'image.png') => {
+  try {
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.download = fileName;
+    link.target = '_blank';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  } catch (error) {
+    console.error('下載過程中發生錯誤：', error);
+  }
 };

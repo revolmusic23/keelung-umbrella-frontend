@@ -7,9 +7,14 @@
           :src="item.images[0].framed_image_path"
           placeholder="載入中"
         ></v-img>
-        <!-- <div class="mt-2 d-flex justify-center">
-          <v-btn class="btn-blue" rounded>下載</v-btn>
-        </div> -->
+        <div class="mt-2 d-flex justify-center">
+          <v-btn
+            class="btn-blue"
+            rounded
+            @click="downloadImg(item.images[0].framed_image_path)"
+            >下載收藏此作品</v-btn
+          >
+        </div>
       </template>
     </XBaseGridLayout>
   </v-infinite-scroll>
@@ -23,6 +28,7 @@
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { downloadImg } from '@/utils/imgUtils';
 import services from '@/services/services';
 import GalleryInfoModal from '@/components/Modal/GalleryInfoModal.vue';
 

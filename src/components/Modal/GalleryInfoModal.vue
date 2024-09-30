@@ -17,8 +17,7 @@
           <div class="line"></div>
         </div>
         <h4 class="mb-2">{{ galleryInfo.description }}</h4>
-        <div class="work-number">
-          作品編號：#{{ galleryInfo.number }}</div>
+        <div class="work-number">作品編號：#{{ galleryInfo.number }}</div>
       </div>
     </v-card>
   </v-dialog>
