@@ -13,9 +13,9 @@
       size="112"
     ></v-icon>
 
-    <h2 class="text-h5 mb-6">感謝你報名完成參賽！</h2>
+    <h2 class="text-h5 mb-6">感謝您完成參賽報名！</h2>
     <!-- <p class="mb-4 text-medium-emphasis text-body-2">
-      <b>感謝你報名完成參賽！<br />
+      <b>感謝您完成參賽報名！<br />
       請點選上方主選單前往其他頁面。</b>
     </p> -->
     <v-divider class="mb-4"></v-divider>
