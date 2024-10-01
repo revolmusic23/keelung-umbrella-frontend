@@ -40,7 +40,7 @@
         </div>
 
         <p class="article-container-content">
-          10/10～10/31 活動期間至基隆市文化廣場與任一傘人家族成員合照，合照對象不限(人、竉物、玩偶、玩具…皆可)，再至活動網站，選擇一張合照並留下一句話上傳作品，即完成參賽，活動結束後將選出前三名最有創意的照片，贈予精美獎品。
+          10/10～10/31 活動期間至基隆市文化廣場與任一傘人家族成員合照，合照對象不限(人、竉物、玩偶、玩具…皆可)，再至活動網站，選擇一張合照並附上一句話上傳作品，即完成參賽，活動結束後將選出前三名最有創意的照片，贈予精美獎品。
         </p>
       </div>
     </article>
@@ -94,7 +94,7 @@
             style="gap: 2rem"
           >
             <h5>- 作品範例 -</h5>
-            <v-img src="images/photo-1.png"></v-img>
+            <v-img src="images/photo-2.png"></v-img>
           </div>
 
           <div class="information-container-content w-md-75 w-100">
