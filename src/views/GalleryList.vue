@@ -3,6 +3,7 @@
     <XBaseGridLayout :cards="galleryList">
       <template #card="{ item }">
         <v-img
+          class="cursor-pointer"
           @click="toggleModal.galleryInfo(item.uuid)"
           :src="item.images[0].framed_image_path"
           placeholder="載入中"
@@ -12,7 +13,7 @@
             class="btn-blue"
             rounded
             @click="downloadImg(item.images[0].framed_image_path)"
-            >下載收藏此作品</v-btn
+            >下載收藏此拍立得</v-btn
           >
         </div>
       </template>

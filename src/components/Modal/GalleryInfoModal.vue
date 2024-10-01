@@ -2,7 +2,7 @@
   <v-dialog
     v-model="showModal"
     class="w-100 w-md-75"
-    max-width="800"
+    :max-width="pictureRatio === 1 ? '750' : pictureRatio < 1 ? '600' : '1000'"
     :opacity="0.85"
   >
     <v-card class="pa-4 rounded-lg" color="transparent" elevation="0">
@@ -16,8 +16,9 @@
           <h6>作品敘述</h6>
           <div class="line"></div>
         </div>
-        <h4 class="mb-2">{{ galleryInfo.description }}</h4>
-        <div class="work-number">作品編號：#{{ galleryInfo.number }}</div>
+        <h3 class="mb-2">{{ galleryInfo.description }}</h3>
+        <div class="work-number">
+          作品編號：#{{ galleryInfo.number }}</div>
       </div>
     </v-card>
   </v-dialog>
@@ -64,6 +65,7 @@ watch(showModal, (newVal) => {
 
 const galleryInfo = ref({});
 const errorMessage = ref('');
+const pictureRatio = ref(1);
 
 const getGalleryInfo = async () => {
   console.log('props.uuid:', props.uuid);
@@ -71,6 +73,13 @@ const getGalleryInfo = async () => {
     props.uuid
   );
   console.log(galleryInfo.value);
+
+  const image = new Image();
+  image.src = galleryInfo.value.src;
+
+  image.onload = () => {
+    pictureRatio.value = image.width / image.height;
+  };
 };
 </script>
 

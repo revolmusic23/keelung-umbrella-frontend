@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-height: 100px;
+  max-height: 120px;
 
   @media screen and (max-width: 600px) {
     flex-direction: column;
