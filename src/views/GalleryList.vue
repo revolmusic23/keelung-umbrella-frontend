@@ -10,7 +10,7 @@
         ></v-img>
         <div class="mt-2 d-flex justify-center">
           <v-btn
-            class="btn-blue"
+            class="btn-download"
             rounded
             @click="downloadImg(item.images[0].framed_image_path)"
             >下載收藏此拍立得</v-btn
@@ -79,4 +79,19 @@ const toggleModal = {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.btn-download {
+  background-color: #999;
+  line-height: 1;
+  color: white;
+  font-size: 13px;
+  padding: 4px 12px;
+  margin: 0 auto;
+  max-height: 30px;
+  transition: all .2s;
+
+  &:hover {
+    background-color: var(--primary-orange);
+  }
+}
+</style>
