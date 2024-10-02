@@ -22,7 +22,7 @@
     ></v-app-bar-nav-icon>
   </v-app-bar>
 
-  <v-navigation-drawer v-model="showDrawer" width="160" temporary>
+  <v-navigation-drawer v-model="showDrawer" class="side-bar" width="160" temporary>
     <v-list>
       <v-list-item
         v-for="item in menuItems"
@@ -86,5 +86,9 @@ const menuItems = computed(() => {
   @media screen and (max-width: 600px) {
     width: 120px;
   }
+}
+
+.side-bar {
+  background-color: white;
 }
 </style>
