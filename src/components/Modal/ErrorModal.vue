@@ -31,14 +31,11 @@ const props = defineProps({
 const emit = defineEmits(['update:showModal']);
 
 const router = useRouter();
-const showModal = ref(false);
 
-watch(
-  () => props.showModal,
-  (newVal) => {
-    showModal.value = newVal;
-  }
-);
+const showModal = computed({
+  get: () => props.showModal,
+  set: (newVal) => emit('update:showModal', newVal),
+});
 </script>
 
 <style scoped lang="scss"></style>

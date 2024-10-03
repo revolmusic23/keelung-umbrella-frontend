@@ -1,5 +1,7 @@
 import apiClient from '@/api/apiClient';
 
+import { ref } from 'vue';
+
 export default {
   async postImg(userFormData, imgFormData) {
     const formdata = new FormData();
@@ -27,7 +29,11 @@ export default {
       console.log('post image response:', response);
       return [undefined, response.data];
     } else {
-      return [error.response.data.message, undefined];
+      const errorMessage = ref(false);
+      errorMessage.value = error.response.data.errors.email[0]
+        ? error.response.data.errors.email[0]
+        : error.response.data.message;
+      return [errorMessage.value, undefined];
     }
   },
 

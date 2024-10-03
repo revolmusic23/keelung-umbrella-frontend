@@ -27,7 +27,11 @@ import { useStore } from 'vuex';
 const store = useStore();
 const route = useRoute();
 const showToolbar = computed(() => !route.meta.hideToolbar);
-const showErrorModal = computed(() => store.state.showErrorModal);
+const showErrorModal = computed({
+  get: () => store.state.showErrorModal,
+  set: (newVal) =>
+    store.dispatch('setShowErrorModal', { value: newVal, errorMessage: '' }),
+});
 const errorMessage = computed(() => store.state.errorMessage);
 </script>
 
