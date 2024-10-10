@@ -87,7 +87,7 @@
             </div>
           </div>
           <div :class="textInfoClass">
-            <h2 class="yellow-bold-text">小傘</h2>
+            <h2 class="yellow-bold-text">小雲</h2>
             <p class="text-sm-center white-bold-text introduce-container-content"><b>頂著小傘，活潑且<br>愉快的穿梭在大街小巷。</b></p>
           </div>
         </div>
@@ -99,7 +99,7 @@
             </div>
           </div>
           <div :class="textInfoClass">
-            <h2 class="yellow-bold-text">小雲</h2>
+            <h2 class="yellow-bold-text">小傘</h2>
             <p class="text-sm-center white-bold-text introduce-container-content">
               <b>雲朵帶的雨滴，加入成為<br>基隆傘人家族的一員。</b>
             </p>

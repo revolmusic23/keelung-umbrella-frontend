@@ -161,7 +161,7 @@
                 <div class="detail-table-bottom">
                   <div class="detail-table-bottom-item">60%</div>
                   <div class="detail-table-bottom-item">30%</div>
-                  <div class="detail-table-bottom-item">20%</div>
+                  <div class="detail-table-bottom-item">10%</div>
                 </div>
               </div>
             </div>
@@ -179,6 +179,7 @@
           <h4 class="detail-container-section-title">注意事項</h4>
           <div class="detail-container-section-content">
             <ol class="pl-4 notice-list">
+              <li>請勿觸碰傘人公仔，如有毀損造成活動相關之損失，需自行負責。</li>
               <li>凡上傳作品完成報名參加本活動者，即視為已充分瞭解本辦法中各項條款，且願意完全遵守本活動之各項規定。</li>
               <li>參賽作品不得含有任何具挑釁、猥褻、毀謗、暴力、情色、種族歧視性或其他任何引人厭惡或不合宜之內容，主辦單位得自行判斷並有權下架作品不另行通知。 </li>
               <li>參賽作品開放供民眾下載收藏，但不得侵害其作者著作權及相關利益，如有違反，須自負法律責任。</li>
